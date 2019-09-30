@@ -17,6 +17,8 @@
     <modules>
         <module>icetea-rabbitmq-test</module>
         <module>icetea-redis-test</module>
+        <module>icetea-springMVC-test</module>
+        <module>icetea-util</module>
     </modules>
 
     <dependencies>
@@ -28,6 +30,10 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 </project>
