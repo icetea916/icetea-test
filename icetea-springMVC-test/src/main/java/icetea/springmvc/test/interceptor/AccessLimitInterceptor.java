@@ -48,7 +48,7 @@ public class AccessLimitInterceptor extends HandlerInterceptorAdapter {
                         redisTemplate.expire(key, seconds, TimeUnit.SECONDS);
                     }
                     if (count > maxCount) {
-                        log.error("ip={}访问接口({})次数过多，每{}秒最大访问次数maxCount={}",
+                        log.debug("ip={}访问接口({})次数过多，每{}秒最大访问次数maxCount={}",
                                 IpUtils.getClientIpAddressIfServletRequestExist(),
                                 request.getRequestURI(),
                                 seconds,
