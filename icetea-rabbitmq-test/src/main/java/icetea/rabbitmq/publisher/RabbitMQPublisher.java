@@ -1,7 +1,5 @@
-package icetea.rabbitmq;
+package icetea.rabbitmq.publisher;
 
 public class RabbitMQPublisher {
-
-
 
 }
