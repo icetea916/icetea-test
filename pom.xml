@@ -19,7 +19,22 @@
         <module>icetea-redis-test</module>
         <module>icetea-springMVC-test</module>
         <module>icetea-util</module>
+        <module>spring-cloud-eureka</module>
+        <module>spring-cloud-eureka-client-one</module>
+        <module>spring-cloud-eureka-client-two</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
