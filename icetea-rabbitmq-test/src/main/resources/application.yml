@@ -1,0 +1,16 @@
+# rabbitmq配置
+spring:
+  rabbitmq:
+    host: 120.78.87.198
+    username: icetea
+    password: icetea/rabbitmq
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: auto
+        retry:
+          enabled: true
+          max-attempts: 5
+        default-requeue-rejected: true
+
+

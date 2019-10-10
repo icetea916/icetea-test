@@ -24,7 +24,10 @@ public class QueueConfig {
     @Autowired
     public void setMyIceteaTest1(@Qualifier("directExchange") Exchange exchange) {
         // 先声明死信队列
-        amqpAdmin.declareQueue(new Queue(RabbitMqConstant.QUEUE_DLX_ICETEA_TEST1));
+        Queue dlxQueue = new Queue(RabbitMqConstant.QUEUE_DLX_ICETEA_TEST1);
+        amqpAdmin.declareQueue(dlxQueue);
+        Binding dlxQueueBinding = BindingBuilder.bind(dlxQueue).to(exchange).with(RabbitMqConstant.QUEUE_DLX_ICETEA_TEST1).noargs();
+        amqpAdmin.declareBinding(dlxQueueBinding);
         // 构造声明队列参数
         Map<String, Object> argsMap = new HashMap<>();
         argsMap.put("x-dead-letter-exchange", RabbitMqConstant.EXCHANGE_ICETEA_DIRECT);

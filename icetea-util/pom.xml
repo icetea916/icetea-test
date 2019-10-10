@@ -11,6 +11,12 @@
 
     <groupId>icetea-test</groupId>
     <artifactId>icetea-util</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-amqp</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>
