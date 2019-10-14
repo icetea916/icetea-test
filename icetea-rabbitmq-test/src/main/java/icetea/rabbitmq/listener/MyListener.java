@@ -19,7 +19,7 @@ import java.util.Map;
 @RabbitListener(queues = {RabbitMqConstant.QUEUE_ICETEA_TEST_1},
         containerFactory = "rabbitListenerContainerFactory",
         concurrency = "5-10")
-@Component
+//@Component
 public class MyListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(MyListener.class);
     @Autowired

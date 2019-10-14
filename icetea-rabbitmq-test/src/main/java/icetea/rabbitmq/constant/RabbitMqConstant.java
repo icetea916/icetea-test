@@ -9,6 +9,7 @@ public class RabbitMqConstant {
     // 交换机常量
     public static final String EXCHANGE_ICETEA_DIRECT = "icetea.direct";
     public static final String EXCHANGE_ICETEA_TOPIC = "icetea.topic";
+    public static final String EXCHANGE_COMMON_DLX = "common.dlx";
 
     // 队列常量
     public static final String QUEUE_ICETEA_TEST_1 = "icetea.test1";

@@ -1,9 +1,8 @@
 package icetea.rabbitmq;
 
-import icetea.rabbitmq.config.MyRabbitMQConfig;
+import icetea.rabbitmq.test.TestConfig;
 import icetea.util.amqp.AmqpUtils;
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,8 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@Import(MyRabbitMQConfig.class)
-@EnableRabbit
+@Import(TestConfig.class)
 public class RabbitMqApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
