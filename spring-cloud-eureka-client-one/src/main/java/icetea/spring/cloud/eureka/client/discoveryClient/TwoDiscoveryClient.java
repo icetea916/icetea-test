@@ -26,7 +26,7 @@ public class TwoDiscoveryClient {
             return null;
         }
 
-        String serviceUri = String.format("%s/test", instances.get(0).getUri());
+        String serviceUri = String.format("%s/test-feign", instances.get(0).getUri());
 
         // 用用RestTemplate进行调用
         RestTemplate restTemplate = new RestTemplate();
