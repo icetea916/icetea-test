@@ -22,6 +22,7 @@
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-eureka-client-one</module>
         <module>spring-cloud-eureka-client-two</module>
+        <module>icetea-spring-cloud-zuul</module>
     </modules>
 
     <dependencyManagement>
@@ -37,6 +38,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
