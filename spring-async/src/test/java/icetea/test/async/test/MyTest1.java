@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.concurrent.CountDownLatch;
+
 @SpringBootTest(classes = AsyncApplication.class)
 @RunWith(SpringRunner.class)
 public class MyTest1 {
@@ -17,11 +19,14 @@ public class MyTest1 {
 
 
     @Test
-    public void test1() {
+    public void test1() throws InterruptedException {
+        CountDownLatch cdl = new CountDownLatch(20);
         for (int i = 0; i < 10; i++) {
-            myService.service1(i);
-            myService.service2(i);
+            myService.service1(cdl, i);
+            myService.service2(cdl, i);
         }
+        cdl.await();
+        System.out.println("==========结束===========");
     }
 
     @Test
