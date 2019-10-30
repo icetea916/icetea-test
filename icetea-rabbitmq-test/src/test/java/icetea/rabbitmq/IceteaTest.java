@@ -3,6 +3,7 @@ package icetea.rabbitmq;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,4 +41,17 @@ public class IceteaTest {
 
         System.out.println(list);
     }
+
+    /**
+     * 测试bigDecimal
+     */
+    @Test
+    public void test3() {
+        BigDecimal big = new BigDecimal("54.001");
+        BigDecimal small = new BigDecimal("54");
+
+        System.out.println(big.compareTo(small));
+        System.out.println(small.compareTo(big));
+    }
+
 }
