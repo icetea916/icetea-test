@@ -24,6 +24,7 @@
         <module>spring-cloud-eureka-client-two</module>
         <module>icetea-spring-cloud-zuul</module>
         <module>spring-async</module>
+        <module>learn-io</module>
     </modules>
 
     <dependencyManagement>
