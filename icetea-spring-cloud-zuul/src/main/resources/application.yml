@@ -11,6 +11,37 @@ spring:
   application:
     name: test-zuul
 
+# zuul路由配置
+zuul:
+  ## 路由映射配置
+  routes:
+    client-one: /client/**
+    ### 配置静态路由,zuul内部服务识别关键字
+    client-static:
+      path: /client-static/**
+      url: http://localhost:8848
+    client-custome:
+      path: /client-custome/**
+      service-id: client-custome
+  ## 忽略基于eureka的自动路由，"*"则排除所有
+  ignored-services: client-one
+  ## 为所遇路由映射添加前缀
+  prefix: /api
+  ribbon:
+    eager-load:
+      enabled: false
+
+## 自定义服务路由配置ribbon配置负载均衡器
+client-custome:
+  ribbon:
+    list-of-servers: http://localhost:8848,http://localhost:8849
+
+# ribbon配置
+#ribbon:
+#  eureka:
+    ## 设置ribbon负载均衡器关闭对eureka的集成
+#    enabled: true
+
 # 开放所有actuator端口，方便查询routes
 management:
   endpoints:
