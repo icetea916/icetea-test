@@ -1,5 +1,10 @@
 server:
   port: 5555
+
+logging:
+  level:
+    root: debug
+
 eureka:
   instance:
     prefer-ip-address: true
