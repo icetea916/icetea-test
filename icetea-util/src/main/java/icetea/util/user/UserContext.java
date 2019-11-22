@@ -1,6 +1,7 @@
-package icetea.util.filter.servlet;
+package icetea.util.user;
 
 public class UserContext {
+
     public static final String CORRELATION_ID = "tmx-correlation-id";
 
     private String correlationId;

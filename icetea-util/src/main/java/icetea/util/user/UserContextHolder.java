@@ -1,4 +1,4 @@
-package icetea.util.filter.servlet;
+package icetea.util.user;
 
 public class UserContextHolder {
 

@@ -2,8 +2,8 @@ package icetea.spring.cloud.eureka.client.hystrix.service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import icetea.util.filter.servlet.UserContext;
-import icetea.util.filter.servlet.UserContextHolder;
+import icetea.util.user.UserContext;
+import icetea.util.user.UserContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

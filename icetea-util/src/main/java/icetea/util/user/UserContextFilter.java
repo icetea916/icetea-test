@@ -1,4 +1,4 @@
-package icetea.util.filter.servlet;
+package icetea.util.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

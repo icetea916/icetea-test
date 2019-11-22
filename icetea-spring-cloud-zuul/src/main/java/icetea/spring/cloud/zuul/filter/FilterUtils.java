@@ -1,7 +1,7 @@
 package icetea.spring.cloud.zuul.filter;
 
 import com.netflix.zuul.context.RequestContext;
-import icetea.util.filter.servlet.UserContext;
+import icetea.util.user.UserContext;
 import org.springframework.stereotype.Component;
 
 @Component
