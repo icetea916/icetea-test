@@ -1,4 +1,4 @@
-package icetea.spring.cloud.eureka.client.hystrix.threadlocal;
+package icetea.util.filter.servlet;
 
 public class UserContextHolder {
 

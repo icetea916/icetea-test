@@ -2,8 +2,8 @@ package icetea.spring.cloud.eureka.client.hystrix.service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import icetea.spring.cloud.eureka.client.hystrix.threadlocal.UserContext;
-import icetea.spring.cloud.eureka.client.hystrix.threadlocal.UserContextHolder;
+import icetea.util.filter.servlet.UserContext;
+import icetea.util.filter.servlet.UserContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -66,6 +66,6 @@ public class TestHystrixService {
     public void testThreadLocal() {
         // 使用hystrixCommand注解是取不到主线程的threadlocal值的
         UserContext context = UserContextHolder.getContext();
-        logger.info(UserContext.CORRELATIKON_ID + ":" + context.getCorrelationId());
+        logger.info(UserContext.CORRELATION_ID + ":" + context.getCorrelationId());
     }
 }

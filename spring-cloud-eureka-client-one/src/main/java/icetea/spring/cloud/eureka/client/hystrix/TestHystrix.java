@@ -2,8 +2,8 @@ package icetea.spring.cloud.eureka.client.hystrix;
 
 import com.netflix.hystrix.exception.HystrixRuntimeException;
 import icetea.spring.cloud.eureka.client.hystrix.service.TestHystrixService;
-import icetea.spring.cloud.eureka.client.hystrix.threadlocal.UserContext;
-import icetea.spring.cloud.eureka.client.hystrix.threadlocal.UserContextHolder;
+import icetea.util.filter.servlet.UserContext;
+import icetea.util.filter.servlet.UserContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +46,7 @@ public class TestHystrix {
     @RequestMapping("testThreadLocal")
     public String testThreadLocal() {
         UserContext context = UserContextHolder.getContext();
-        logger.info(UserContext.CORRELATIKON_ID + ":" + context.getCorrelationId());
+        logger.info(UserContext.CORRELATION_ID + ":" + context.getCorrelationId());
 
         testHystrixService.testThreadLocal();
 
