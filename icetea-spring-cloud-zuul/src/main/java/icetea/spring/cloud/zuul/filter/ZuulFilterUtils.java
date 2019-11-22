@@ -5,7 +5,7 @@ import icetea.util.user.UserContext;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FilterUtils {
+public class ZuulFilterUtils {
 
     /**
      * zuul过滤器类型
@@ -14,7 +14,7 @@ public class FilterUtils {
     public static final String POST_FILTER_TYPE = "post";
     public static final String ROUTE_FILTER_TYPE = "route";
 
-    public String getCorrelationId() {
+    public static String getCorrelationId() {
         RequestContext ctx = RequestContext.getCurrentContext();
         if (ctx.getRequest().getHeader(UserContext.CORRELATION_ID) != null) {
             return ctx.getRequest().getHeader(UserContext.CORRELATION_ID);
@@ -23,7 +23,7 @@ public class FilterUtils {
         }
     }
 
-    public void setCorrelationId(String correlationId) {
+    public static void setCorrelationId(String correlationId) {
         RequestContext ctx = RequestContext.getCurrentContext();
         ctx.addZuulRequestHeader(UserContext.CORRELATION_ID, correlationId);
     }

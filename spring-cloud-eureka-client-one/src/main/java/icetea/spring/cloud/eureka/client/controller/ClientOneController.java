@@ -24,4 +24,9 @@ public class ClientOneController {
         return loadBalanceClient.test1();
     }
 
+    @GetMapping("test3")
+    public String test3() {
+        return "ok";
+    }
+
 }

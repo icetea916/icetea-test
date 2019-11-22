@@ -16,14 +16,14 @@ public class TrackingFilter extends ZuulFilter {
     private static final Logger logger = LoggerFactory.getLogger(TrackingFilter.class);
 
     @Autowired
-    FilterUtils filterUtils;
+    ZuulFilterUtils zuulFilterUtils;
 
     /**
      * 该方法用于告诉zuul该过滤器是前置过滤器、路由过滤器、还是后置过滤器
      */
     @Override
     public String filterType() {
-        return FilterUtils.PRE_FILTER_TYPE;
+        return ZuulFilterUtils.PRE_FILTER_TYPE;
     }
 
     /**
@@ -47,11 +47,11 @@ public class TrackingFilter extends ZuulFilter {
      */
     @Override
     public Object run() throws ZuulException {
-        if (filterUtils.getCorrelationId() != null) {
-            logger.debug("tmx-correlation-id={}.", filterUtils.getCorrelationId());
+        if (zuulFilterUtils.getCorrelationId() != null) {
+            logger.debug("tmx-correlation-id={}.", zuulFilterUtils.getCorrelationId());
         } else {
-            filterUtils.setCorrelationId(UUID.randomUUID().toString());
-            logger.debug("tmx-correlation-id={}.", filterUtils.getCorrelationId());
+            zuulFilterUtils.setCorrelationId(UUID.randomUUID().toString());
+            logger.debug("tmx-correlation-id={}.", zuulFilterUtils.getCorrelationId());
         }
         RequestContext ctx = RequestContext.getCurrentContext();
         logger.debug("处理了请求：{}", ctx.getRequest().getRequestURI());

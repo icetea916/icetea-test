@@ -1,6 +1,6 @@
 package icetea.spring.cloud.zuul;
 
-import icetea.spring.cloud.zuul.filter.FilterUtils;
+import icetea.spring.cloud.zuul.filter.ZuulFilterUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -15,7 +15,7 @@ public class MyZuulApplication {
     }
 
     @Bean
-    public FilterUtils getFilterUtils() {
-        return new FilterUtils();
+    public ZuulFilterUtils getFilterUtils() {
+        return new ZuulFilterUtils();
     }
 }
