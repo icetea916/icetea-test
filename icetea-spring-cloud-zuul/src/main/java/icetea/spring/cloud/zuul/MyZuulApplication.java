@@ -3,8 +3,10 @@ package icetea.spring.cloud.zuul;
 import icetea.spring.cloud.zuul.filter.ZuulFilterUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 // 若想使用eureka必须导入spring Cloud的eureka包
@@ -17,5 +19,13 @@ public class MyZuulApplication {
     @Bean
     public ZuulFilterUtils getFilterUtils() {
         return new ZuulFilterUtils();
+    }
+
+    @Bean
+    @LoadBalanced
+    public RestTemplate getRestTemplate() {
+        RestTemplate restTemplate = new RestTemplate();
+
+        return restTemplate;
     }
 }
