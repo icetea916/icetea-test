@@ -25,6 +25,8 @@
         <module>icetea-spring-cloud-zuul</module>
         <module>spring-async</module>
         <module>learn-io</module>
+        <module>my-test</module>
+        <module>easy-excel-test</module>
     </modules>
 
     <dependencies>
