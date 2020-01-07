@@ -27,6 +27,7 @@
         <module>learn-io</module>
         <module>my-test</module>
         <module>easy-excel-test</module>
+        <module>shirot-est</module>
     </modules>
 
     <dependencies>
