@@ -10,49 +10,18 @@
         <version>2.1.6.RELEASE</version>
     </parent>
 
-    <groupId>icetea-test</groupId>
+    <groupId>icetea.test</groupId>
     <artifactId>icetea-test</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>icetea-rabbitmq-test</module>
-        <module>icetea-redis-test</module>
-        <module>icetea-springMVC-test</module>
-        <module>icetea-util</module>
-        <module>spring-cloud-eureka</module>
-        <module>spring-cloud-eureka-client-one</module>
-        <module>spring-cloud-eureka-client-two</module>
-        <module>icetea-spring-cloud-zuul</module>
-        <module>spring-async</module>
-        <module>learn-io</module>
-        <module>my-test</module>
-        <module>easy-excel-test</module>
-        <module>shirot-est</module>
+        <module>test-thread</module>
     </modules>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-dependencies</artifactId>
-            <version>2.1.4.RELEASE</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -60,15 +29,7 @@
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-rabbit</artifactId>
         </dependency>
     </dependencies>
 </project>
