@@ -18,6 +18,7 @@
         <module>test-thread</module>
         <module>test-poi</module>
         <module>test-io</module>
+        <module>test-webSocket</module>
     </modules>
 
     <dependencies>
@@ -33,5 +34,11 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.73</version>
+        </dependency>
+
     </dependencies>
 </project>
