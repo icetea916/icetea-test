@@ -1,4 +1,4 @@
-package icetea.test.webSocket;
+package icetea.test.webSocket.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Component
-@ServerEndpoint("/icetea/test/websocket/{username}")
+//@Component
+//@ServerEndpoint("/icetea/test/websocket/{username}")
 @Slf4j
 public class WebSocketTest1 {
 

@@ -31,6 +31,7 @@
         $('#response').html();
     }
 
+    // 链接websocket
     function connect() {
         var socket = new SockJS('/endpointWisely'); //链接SockJS 的endpoint 名称为"/endpointWisely"
         stompClient = Stomp.over(socket);//使用stomp子协议的WebSocket 客户端
@@ -55,7 +56,8 @@
     function sendName() {
         var name = $('#name').val();
         //通过stompClient.send 向/welcome 目标 发送消息,这个是在控制器的@messageMapping 中定义的。
-        stompClient.send("/welcome", {}, JSON.stringify({'name': name}));
+        var msg = JSON.stringify({'name': name});
+        stompClient.send("/welcome", {}, msg);
     }
 
     function showResponse(message) {
