@@ -19,6 +19,7 @@
         <module>test-poi</module>
         <module>test-io</module>
         <module>test-webSocket</module>
+        <module>test-rxJava</module>
     </modules>
 
     <dependencies>

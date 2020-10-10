@@ -1,4 +1,4 @@
-package icetea.test.webSocket.domain;
+package icetea.test.springWebSocket.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

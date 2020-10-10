@@ -1,4 +1,4 @@
-package icetea.test.webSocket.config;
+package icetea.test.springWebSocket.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

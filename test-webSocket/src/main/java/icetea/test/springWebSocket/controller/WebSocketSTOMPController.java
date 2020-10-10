@@ -1,8 +1,8 @@
-package icetea.test.webSocket.controller;
+package icetea.test.springWebSocket.controller;
 
 
-import icetea.test.webSocket.domain.Message;
-import icetea.test.webSocket.domain.Response;
+import icetea.test.springWebSocket.domain.Message;
+import icetea.test.springWebSocket.domain.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
