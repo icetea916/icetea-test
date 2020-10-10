@@ -10,12 +10,12 @@
 <script type="text/javascript">
     var websocket = null;
     var namespace = "icetea";
-    var port = "9092";
+    var port = "9099";
 
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
         alert("浏览器支持Websocket")
-        websocket = new WebSocket('ws://172.16.0.254:' + port);
+        websocket = new WebSocket('ws://localhost:' + port);
     } else {
         alert('当前浏览器不支持websocket')
     }

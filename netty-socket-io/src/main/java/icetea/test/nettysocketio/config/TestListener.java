@@ -6,7 +6,7 @@ import com.corundumstudio.socketio.annotation.OnDisconnect;
 import com.corundumstudio.socketio.annotation.OnEvent;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class TestListener {
 
     @OnConnect

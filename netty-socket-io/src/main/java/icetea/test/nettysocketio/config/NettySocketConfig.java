@@ -9,7 +9,7 @@ import com.corundumstudio.socketio.listener.PingListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class NettySocketConfig {
 
     private static final Integer port = 9092;
