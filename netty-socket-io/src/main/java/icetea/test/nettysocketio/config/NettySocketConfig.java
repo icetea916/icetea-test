@@ -20,7 +20,7 @@ public class NettySocketConfig {
         SocketConfig socketConfig = new SocketConfig();
         socketConfig.setReuseAddress(true);
         config.setSocketConfig(socketConfig);
-        config.setHostname("localhost");
+        config.setHostname("172.16.0.254");
         config.setPort(port);
         // 设置最大每帧处理数据的长度，防止他人利用大数据来攻击服务器
         config.setMaxFramePayloadLength(1024 * 1024);
