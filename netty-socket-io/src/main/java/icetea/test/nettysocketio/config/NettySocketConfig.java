@@ -8,19 +8,20 @@ import com.corundumstudio.socketio.annotation.SpringAnnotationScanner;
 import com.corundumstudio.socketio.listener.PingListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 
-//@Configuration
+@Configuration
 public class NettySocketConfig {
 
-    private static final Integer port = 9092;
+    private static final Integer port = 9099;
 
     @Bean
+    @Lazy(value = false)
     public SocketIOServer socketIOServer() throws Exception {
         com.corundumstudio.socketio.Configuration config = new com.corundumstudio.socketio.Configuration();
         SocketConfig socketConfig = new SocketConfig();
         socketConfig.setReuseAddress(true);
         config.setSocketConfig(socketConfig);
-        config.setHostname("172.16.0.254");
         config.setPort(port);
         // 设置最大每帧处理数据的长度，防止他人利用大数据来攻击服务器
         config.setMaxFramePayloadLength(1024 * 1024);

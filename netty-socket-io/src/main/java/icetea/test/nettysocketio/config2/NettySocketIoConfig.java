@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 配置方式二
  */
-@Configuration
+//@Configuration
 public class NettySocketIoConfig {
 
     @Value("${socketio.host}")
