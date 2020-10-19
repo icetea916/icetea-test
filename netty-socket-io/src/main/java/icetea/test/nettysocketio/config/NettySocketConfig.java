@@ -1,14 +1,10 @@
 package icetea.test.nettysocketio.config;
 
 import com.corundumstudio.socketio.SocketConfig;
-import com.corundumstudio.socketio.SocketIOClient;
-import com.corundumstudio.socketio.SocketIONamespace;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.SpringAnnotationScanner;
-import com.corundumstudio.socketio.listener.PingListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 
 @Configuration
 public class NettySocketConfig {
@@ -38,18 +34,7 @@ public class NettySocketConfig {
         config.setPingTimeout(180000);
         // Ping消息间隔（毫秒），默认25秒。客户端向服务器发送一条心跳消息间隔
         config.setPingInterval(10000);
-
         SocketIOServer server = new SocketIOServer(config);
-        SocketIONamespace testNamespace = server.addNamespace("/");
-        // 添加监听器
-        testNamespace.addListeners(new TestListener());
-        // 添加心跳监听
-        server.addPingListener(new PingListener() {
-            @Override
-            public void onPing(SocketIOClient socketIOClient) {
-                System.out.println("sessionId={},chat1 heart..." + socketIOClient.getSessionId().toString());
-            }
-        });
         return server;
     }
 

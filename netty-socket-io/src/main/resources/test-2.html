@@ -38,7 +38,7 @@
     connect();
 
     function connect() {
-        var loginUserNum = '88';
+        var loginUserNum = 'icetea';
         var opts = {
             query: 'loginUserNum=' + loginUserNum
         };
@@ -51,7 +51,6 @@
             output('<span class="username-msg">' + data + ' </span>');
             console.log(data);
         });
-
         socket.on('disconnect', function () {
             serverOutput('<span class="disconnect-msg">' + '已下线! </span>');
         });
