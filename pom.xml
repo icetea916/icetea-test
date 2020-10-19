@@ -21,7 +21,14 @@
         <module>spring-webSocket</module>
         <module>test-rxJava</module>
         <module>netty-socket-io</module>
+        <module>java-feature</module>
     </modules>
+
+    <properties>
+        <maven.compile.target>1.8</maven.compile.target>
+        <maven.compile.source>1.8</maven.compile.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -43,4 +50,19 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding><!-- 字符集编码 -->
+                    <source>1.8</source> <!-- 源代码使用的JDK版本 -->
+                    <target>1.8</target> <!-- 需要生成的目标class文件的编译版本 -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
