@@ -18,7 +18,7 @@
         <module>test-thread</module>
         <module>test-poi</module>
         <module>test-io</module>
-        <module>test-webSocket</module>
+        <module>spring-webSocket</module>
         <module>test-rxJava</module>
         <module>netty-socket-io</module>
     </modules>

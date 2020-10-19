@@ -16,7 +16,6 @@ public class NettySocketConfig {
     private static final Integer port = 9099;
 
     @Bean
-    @Lazy(value = false)
     public SocketIOServer socketIOServer() throws Exception {
         com.corundumstudio.socketio.Configuration config = new com.corundumstudio.socketio.Configuration();
         SocketConfig socketConfig = new SocketConfig();

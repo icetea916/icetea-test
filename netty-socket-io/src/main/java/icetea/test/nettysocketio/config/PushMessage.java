@@ -1,4 +1,4 @@
-package icetea.test.nettysocketio.config2;
+package icetea.test.nettysocketio.config;
 
 
 public class PushMessage {
@@ -32,4 +32,5 @@ public class PushMessage {
                 ", content='" + content + '\'' +
                 '}';
     }
+
 }

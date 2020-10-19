@@ -1,9 +1,9 @@
-package icetea.test.nettysocketio.config2;
+package icetea.test.nettysocketio.config;
 
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -11,36 +11,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-//@Service(value = "socketIOService")
-public class SocketIOServiceImpl implements SocketIOService {
+@Component
+public class SocketIOService {
 
     // 用来存已连接的客户端
     private static Map<String, SocketIOClient> clientMap = new ConcurrentHashMap<>();
+    //推送的事件
+    public static final String PUSH_EVENT = "push_event";
 
     @Autowired
     private SocketIOServer socketIOServer;
 
-    /**
-     * Spring IoC容器创建之后，在加载SocketIOServiceImpl Bean之后启动
-     *
-     * @throws Exception
-     */
+
     @PostConstruct
-    private void autoStartup() throws Exception {
-        start();
-    }
-
-    /**
-     * Spring IoC容器在销毁SocketIOServiceImpl Bean之前关闭,避免重启项目服务端口占用问题
-     *
-     * @throws Exception
-     */
-    @PreDestroy
-    private void autoStop() throws Exception {
-        stop();
-    }
-
-    @Override
     public void start() {
         // 监听客户端连接
         socketIOServer.addConnectListener(client -> {
@@ -66,7 +49,10 @@ public class SocketIOServiceImpl implements SocketIOService {
         socketIOServer.start();
     }
 
-    @Override
+    /**
+     * Spring IoC容器在销毁SocketIOServiceImpl Bean之前关闭,避免重启项目服务端口占用问题
+     */
+    @PreDestroy
     public void stop() {
         if (socketIOServer != null) {
             socketIOServer.stop();
@@ -74,7 +60,6 @@ public class SocketIOServiceImpl implements SocketIOService {
         }
     }
 
-    @Override
     public void pushMessageToUser(PushMessage pushMessage) {
         String loginUserNum = pushMessage.getLoginUserNum().toString();
         if (loginUserNum != null && !"".equals(loginUserNum)) {
@@ -99,5 +84,6 @@ public class SocketIOServiceImpl implements SocketIOService {
         }
         return null;
     }
+    
 }
 
