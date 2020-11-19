@@ -19,4 +19,9 @@ public class Leader implements IWork {
         return score;
     }
 
+    public String test1() {
+        System.out.println("icetea1111111");
+        return "icetea";
+    }
+
 }

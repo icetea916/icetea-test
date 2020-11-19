@@ -11,6 +11,13 @@ public class WorkInvocationHandler implements InvocationHandler {
         this.target = target;
     }
 
+    /**
+     * @param proxy  代理对象
+     * @param method 正在调用的方法
+     * @param args   入参
+     * @return
+     * @throws Throwable
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println(target.getClass().getSimpleName());
