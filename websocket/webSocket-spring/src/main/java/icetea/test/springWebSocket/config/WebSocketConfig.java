@@ -1,5 +1,6 @@
 package icetea.test.springWebSocket.config;
 
+import icetea.test.springWebSocket.config.handler.MarcoHandler_2;
 import icetea.test.springWebSocket.config.interceptor.WebSocketHandshakeInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

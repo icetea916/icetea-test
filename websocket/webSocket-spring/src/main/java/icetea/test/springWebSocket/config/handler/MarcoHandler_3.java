@@ -1,4 +1,4 @@
-package icetea.test.springWebSocket.config;
+package icetea.test.springWebSocket.config.handler;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.TextMessage;

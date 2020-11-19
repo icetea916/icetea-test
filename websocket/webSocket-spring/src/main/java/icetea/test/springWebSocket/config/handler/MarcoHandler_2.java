@@ -1,4 +1,4 @@
-package icetea.test.springWebSocket.config;
+package icetea.test.springWebSocket.config.handler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

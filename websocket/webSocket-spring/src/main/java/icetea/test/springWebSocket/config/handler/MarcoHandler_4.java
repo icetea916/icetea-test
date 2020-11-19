@@ -1,4 +1,4 @@
-package icetea.test.springWebSocket.config;
+package icetea.test.springWebSocket.config.handler;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.BinaryMessage;
@@ -6,8 +6,6 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.BinaryWebSocketHandler;
 
 /**
- * Created by XiuYin.Cui on 2018/5/1.
- * <p>
  * BinaryWebSocketHandler也是AbstractWeb-SocketHandler的子类，
  * 它重载了handleTextMessage()方法，如果接收到文本消息的话，将会关闭连接。
  */
