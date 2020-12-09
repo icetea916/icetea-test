@@ -25,6 +25,7 @@
         <module>websocket/websocket-stomp</module>
         <module>java-feature</module>
         <module>test-springAOP</module>
+        <module>test-open-office</module>
     </modules>
 
     <properties>
