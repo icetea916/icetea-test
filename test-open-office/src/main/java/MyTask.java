@@ -8,6 +8,7 @@ import lombok.SneakyThrows;
 
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.util.UUID;
 
 public class MyTask implements Runnable {
 
@@ -15,14 +16,23 @@ public class MyTask implements Runnable {
     @Override
     public void run() {
         InputStream in = TestOpenOffice.class.getClassLoader().getResourceAsStream("test-open-office.docx");
-        FileOutputStream out = new FileOutputStream("test-open-office-pdf.pdf");
+        FileOutputStream out = new FileOutputStream(UUID.randomUUID().toString() + ".pdf");
 
         OpenOfficeConnection connection = new SocketOpenOfficeConnection("127.0.0.1", 8100);
         connection.connect();
         DocumentFormatRegistry formatRegistry = new DefaultDocumentFormatRegistry();
         DocumentConverter converter = new StreamOpenOfficeDocumentConverter(connection);
-
-
         converter.convert(in, formatRegistry.getFormatByFileExtension("doc"), out, formatRegistry.getFormatByFileExtension("pdf"));
+        in.close();
+        out.close();
+        if (connection != null && connection.isConnected()) {
+            connection.disconnect();
+        }
     }
+
+    public static void main(String[] args) {
+        MyTask myTask = new MyTask();
+        myTask.run();
+    }
+
 }
