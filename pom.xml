@@ -17,7 +17,6 @@
     <modules>
         <module>test-thread</module>
         <module>test-poi</module>
-        <module>test-io</module>
         <module>test-rxJava</module>
         <module>websocket/webSocket-spring</module>
         <module>websocket/websocket-nettySocketIo</module>
@@ -26,6 +25,7 @@
         <module>java-feature</module>
         <module>test-springAOP</module>
         <module>test-open-office</module>
+        <module>test-mybatis</module>
     </modules>
 
     <properties>
