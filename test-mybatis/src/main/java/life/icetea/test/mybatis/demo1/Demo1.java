@@ -36,8 +36,13 @@ public class Demo1 {
         SqlSession sqlSession = factory.openSession();
 
         BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+
         Blog blog = mapper.selectBlog(1);
         System.out.println(blog);
+
+        Blog blog1 = mapper.selectBlog2(1);
+        System.out.println(blog1);
+
         sqlSession.close();
     }
 
