@@ -27,6 +27,8 @@
         <module>test-open-office</module>
         <module>test-mybatis</module>
         <module>test-zookeeper</module>
+        <module>test-elastic-job</module>
+        <module>test-shiro</module>
     </modules>
 
     <properties>
