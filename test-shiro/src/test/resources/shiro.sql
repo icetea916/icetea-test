@@ -28,3 +28,15 @@ create table roles_permissions(
 create unique index idx_roles_permissions on roles_permissions(role_name, permission);
 
 insert into users(username,password)values('icetea','1234');
+
+
+delete from users;
+delete from user_roles;
+delete from roles_permissions;
+insert into users(username, password, password_salt) values('icetea', '1234', null);
+insert into user_roles(username, role_name) values('icetea', 'role1');
+insert into user_roles(username, role_name) values('icetea', 'role2');
+insert into roles_permissions(role_name, permission) values('role1', '+user1+10');
+insert into roles_permissions(role_name, permission) values('role1', 'user1:*');
+insert into roles_permissions(role_name, permission) values('role1', '+user2+10');
+insert into roles_permissions(role_name, permission) values('role1', 'user2:*');
