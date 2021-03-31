@@ -30,6 +30,7 @@
         <module>test-elastic-job</module>
         <module>test-shiro</module>
         <module>test-spring-boot-redis</module>
+        <module>test-rabbitMQ</module>
     </modules>
 
     <properties>
@@ -55,6 +56,10 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.73</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
     </dependencies>
