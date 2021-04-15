@@ -3,11 +3,15 @@ package icetea.test.nettysocketio.config;
 import com.corundumstudio.socketio.SocketConfig;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.SpringAnnotationScanner;
+import icetea.test.nettysocketio.constant.CommonConstants;
+import icetea.test.nettysocketio.listener.MyAuthorizationListener;
+import icetea.test.nettysocketio.listener.MyExceptionListener;
+import icetea.test.nettysocketio.listener.MyPingListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class NettySocketConfig {
+public class NettySocketIOConfig {
 
     private static final Integer port = 9099;
 
@@ -30,11 +34,28 @@ public class NettySocketConfig {
         config.setBossThreads(1);
         config.setWorkerThreads(10);
         config.setAllowCustomRequests(true);
-        // Ping消息超时时间（毫秒），默认60秒，这个时间间隔内没有接收到心跳消息就会发送超时事件
-        config.setPingTimeout(180000);
-        // Ping消息间隔（毫秒），默认25秒。客户端向服务器发送一条心跳消息间隔
+        // 心跳Ping消息超时时间（毫秒），默认60秒，这个时间间隔内没有接收到心跳消息就会发送超时事件
+        config.setPingTimeout(3000);
+        // 心跳Ping消息间隔（毫秒），默认25秒。客户端向服务器发送一条心跳消息间隔
         config.setPingInterval(10000);
+
+        // 创建socketIO server
         SocketIOServer server = new SocketIOServer(config);
+        // 添加心跳监听
+        server.addPingListener(new MyPingListener());
+        // 处理自定义的事件，与连接监听类似,也可用@Event注解方式
+        server.addEventListener(CommonConstants.EVENT_PUSH, PushMessage.class, (client, data, ackSender) -> {
+            // TODO do something
+        });
+
+        //创建命名空间
+//        SocketIONamespace socketIONamespace = server.addNamespace("/test");
+//        socketIONamespace.addListeners(testNameSpaceListener);
+//        socketIONamespace.addPingListener(new MyPingListener());
+        server.addNamespace("test");
+        // 开启socket服务
+        server.start();
+
         return server;
     }
 

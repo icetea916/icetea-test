@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NettySocketIoApplication {
+public class NettySocketIOApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NettySocketIoApplication.class);
+        SpringApplication.run(NettySocketIOApplication.class);
     }
 
 }

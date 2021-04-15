@@ -31,40 +31,42 @@
 </head>
 
 <body>
+<button id="test-message">测试消息</button>
 <div id="console" class="well"></div>
 </body>
 <script type="text/javascript">
-    var socket;
-    connect();
+    const socket = io.connect('http://localhost:9099/test-namespace', {
+        query: {
+            "loginUserName": "icetea",
+            "token": "icetea-token-12345678"
+        }
+    });
 
-    function connect() {
-        var loginUserNum = 'icetea';
-        var opts = {
-            query: 'loginUserNum=' + loginUserNum
-        };
-        socket = io.connect('http://localhost:9099', opts);
-        socket.on('connect', function () {
-            console.log("连接成功");
-            serverOutput('<span class="connect-msg">连接成功</span>');
-        });
-        socket.on('push_event', function (data) {
-            output('<span class="username-msg">' + data + ' </span>');
-            console.log(data);
-        });
-        socket.on('disconnect', function () {
-            serverOutput('<span class="disconnect-msg">' + '已下线! </span>');
-        });
-    }
-
-    function output(message) {
-        var element = $("<div>" + " " + message + "</div>");
+    // 连接成功回调
+    socket.on('connect', function () {
+        console.log("connected");
+        var element = $("<div>" + '<span class="connect-msg">连接成功</span>' + "</div>");
         $('#console').prepend(element);
-    }
+    });
 
-    function serverOutput(message) {
-        var element = $("<div>" + message + "</div>");
+    // push事件回调
+    socket.on('event_push', function (data) {
+        var element = $("<div>" + '<span class="username-msg">' + data + ' </span>' + message + "</div>");
         $('#console').prepend(element);
-    }
+        console.log(data);
+    });
+
+    // disconnect回调
+    socket.on('disconnect', function () {
+        var element = $("<div>" + '<span class="disconnect-msg">' + '已下线! </span>' + "</div>");
+        $('#console').prepend(element);
+    });
+
+    // 发送消息
+    $("#test-message").click(function () {
+        var msg = "我很好的,是的．icetea";
+        socket.emit('test', {message: msg});
+    });
 </script>
 </html>
 
