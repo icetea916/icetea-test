@@ -1,4 +1,4 @@
-package icetea.test.nettysocketio.listener;
+package life.icetea.nettysocketio.listener;
 
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.SocketIOClient;
@@ -6,6 +6,7 @@ import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.OnConnect;
 import com.corundumstudio.socketio.annotation.OnDisconnect;
 import com.corundumstudio.socketio.annotation.OnEvent;
+import life.icetea.nettysocketio.domain.MyMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -46,10 +47,21 @@ public class TestNameSpaceListener {
     /**
      * 处理消息事件
      */
-    @OnEvent("message")
+    @OnEvent("message-map")
     public void onSendMessage(SocketIOClient client, AckRequest ackRequest, Map<String, Object> message) {
         log.info("接受消息 message: sessionId={}, message={}", client.getSessionId(), message.toString());
-        // 广播给房间内的所有人
+        // 返回消息
+        client.sendEvent("message", "已收到发送的消息");
+    }
+
+    /**
+     * 处理消息事件-model
+     */
+    @OnEvent("message-model")
+    public void onSendMessage(SocketIOClient client, AckRequest ackRequest, MyMessage message) {
+        log.info("接受消息model类详细自动转换 message: sessionId={}, message={}", client.getSessionId(), message.toString());
+        // 返回消息
+        client.sendEvent("message", "已收到发送的消息");
     }
 
     /**

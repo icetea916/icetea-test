@@ -1,4 +1,4 @@
-package icetea.test.nettysocketio.listener;
+package life.icetea.nettysocketio.listener;
 
 import com.corundumstudio.socketio.AuthorizationListener;
 import com.corundumstudio.socketio.HandshakeData;

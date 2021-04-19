@@ -1,11 +1,12 @@
-package icetea.test.nettysocketio.client;
+package life.icetea.nettysocketio.client;
 
+import life.icetea.nettysocketio.domain.MyMessage;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.URISyntaxException;
-import java.util.HashMap;
+import java.util.Scanner;
 
 @Slf4j
 public class SocketIOClient {
@@ -49,11 +50,21 @@ public class SocketIOClient {
         }
 
         // 发送消息
-        HashMap<String, Object> message = new HashMap<>();
-        message.put("content", "test message!!!");
-        message.put("username", username);
-        socket.emit("message", message);
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.print("请输入消息:");
+            String content = input.next();
+            if ("exit".equals(content)) {
+                // 退出
+                break;
+            }
+            MyMessage msg = new MyMessage();
+            msg.setUsername("icetea-java-client");
+            msg.setAge(19);
+            msg.setContent(content);
+            socket.emit("message-model", msg);
+        }
 
-//        socket.disconnect();
+        socket.disconnect();
     }
 }

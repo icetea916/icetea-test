@@ -1,4 +1,4 @@
-package icetea.test.nettysocketio.config;
+package life.icetea.nettysocketio.domain;
 
 
 public class PushMessage {

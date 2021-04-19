@@ -1,12 +1,13 @@
-package icetea.test.nettysocketio.config;
+package life.icetea.nettysocketio.config;
 
 import com.corundumstudio.socketio.SocketConfig;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.SpringAnnotationScanner;
-import icetea.test.nettysocketio.constant.CommonConstants;
-import icetea.test.nettysocketio.listener.MyAuthorizationListener;
-import icetea.test.nettysocketio.listener.MyExceptionListener;
-import icetea.test.nettysocketio.listener.MyPingListener;
+import life.icetea.nettysocketio.constant.CommonConstants;
+import life.icetea.nettysocketio.domain.PushMessage;
+import life.icetea.nettysocketio.listener.MyAuthorizationListener;
+import life.icetea.nettysocketio.listener.MyExceptionListener;
+import life.icetea.nettysocketio.listener.MyPingListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -52,7 +53,7 @@ public class NettySocketIOConfig {
 //        SocketIONamespace socketIONamespace = server.addNamespace("/test");
 //        socketIONamespace.addListeners(testNameSpaceListener);
 //        socketIONamespace.addPingListener(new MyPingListener());
-        server.addNamespace("test");
+
         // 开启socket服务
         server.start();
 

@@ -1,4 +1,4 @@
-package icetea.test.nettysocketio.constant;
+package life.icetea.nettysocketio.constant;
 
 public class CommonConstants {
 

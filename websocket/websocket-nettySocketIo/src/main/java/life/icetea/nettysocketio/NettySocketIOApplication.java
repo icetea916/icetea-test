@@ -1,4 +1,4 @@
-package icetea.test.nettysocketio;
+package life.icetea.nettysocketio;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

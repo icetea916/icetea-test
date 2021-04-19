@@ -1,4 +1,4 @@
-package icetea.test.nettysocketio.listener;
+package life.icetea.nettysocketio.listener;
 
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.listener.PingListener;

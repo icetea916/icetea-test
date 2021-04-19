@@ -31,11 +31,12 @@
 </head>
 
 <body>
-<button id="test-message">测试消息</button>
+<button id="test-map-message">测试map消息</button>
+<button id="test-model-message">测试model消息</button>
 <div id="console" class="well"></div>
 </body>
 <script type="text/javascript">
-    const socket = io.connect('http://localhost:9099/test-namespace', {
+    const socket = io.connect('http://localhost:9099', {
         query: {
             "loginUserName": "icetea",
             "token": "icetea-token-12345678"
@@ -49,24 +50,34 @@
         $('#console').prepend(element);
     });
 
-    // push事件回调
-    socket.on('event_push', function (data) {
-        var element = $("<div>" + '<span class="username-msg">' + data + ' </span>' + message + "</div>");
-        $('#console').prepend(element);
-        console.log(data);
-    });
-
     // disconnect回调
     socket.on('disconnect', function () {
         var element = $("<div>" + '<span class="disconnect-msg">' + '已下线! </span>' + "</div>");
         $('#console').prepend(element);
     });
 
-    // 发送消息
-    $("#test-message").click(function () {
-        var msg = "我很好的,是的．icetea";
-        socket.emit('test', {message: msg});
+    // 自定义详细发送回调
+    socket.on('message', function (data) {
+        var element = $("<div>" + '<span class="username-msg">' + data + ' </span>' + "</div>");
+        $('#console').prepend(element);
     });
+
+    // 发送map消息
+    $("#test-map-message").click(function () {
+        var msg = "我很好的,是的．icetea";
+        socket.emit('message-map', {message: msg});
+    });
+
+    // 发送model消息
+    $("#test-model-message").click(function () {
+        var msg = {
+            username: "icetea",
+            age: 18,
+            content: "测试发送消息自动转换成model类"
+        };
+        socket.emit('message-model', msg);
+    });
+
 </script>
 </html>
 
