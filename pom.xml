@@ -21,7 +21,6 @@
         <module>websocket/webSocket-spring</module>
         <module>websocket/websocket-nettySocketIo</module>
         <module>websocket/websocket-javaApi</module>
-        <module>websocket/websocket-stomp</module>
         <module>java-feature</module>
         <module>test-springAOP</module>
         <module>test-open-office</module>
