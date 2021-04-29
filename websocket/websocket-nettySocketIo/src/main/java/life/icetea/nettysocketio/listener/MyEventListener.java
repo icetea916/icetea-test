@@ -11,12 +11,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PreDestroy;
 import java.util.Map;
 
 @Component
 @Slf4j
-public class TestNameSpaceListener {
+public class MyEventListener {
 
     @Autowired
     private SocketIOServer socketIOServer;
@@ -55,24 +54,14 @@ public class TestNameSpaceListener {
     }
 
     /**
-     * 处理消息事件-model
+     * 处理消息事件-model,
+     * 注意: 自定义参数顺序要和客户端传来的顺序一致,该框架会自动jackson序列化,如果不一致会报错
      */
     @OnEvent("message-model")
-    public void onSendMessage(SocketIOClient client, AckRequest ackRequest, MyMessage message) {
-        log.info("接受消息model类详细自动转换 message: sessionId={}, message={}", client.getSessionId(), message.toString());
+    public void onSendMessage(SocketIOClient client, AckRequest ackRequest, MyMessage message, String strMessage) {
+        log.info("接受消息model类详细自动转换 message: sessionId={}, message={},{}", client.getSessionId(), message.toString(), strMessage);
         // 返回消息
         client.sendEvent("message", "已收到发送的消息");
-    }
-
-    /**
-     * Spring IoC容器在销毁SocketIOServiceImpl Bean之前关闭,避免重启项目服务端口占用问题
-     */
-    @PreDestroy
-    public void stop() {
-        if (socketIOServer != null) {
-            socketIOServer.stop();
-            socketIOServer = null;
-        }
     }
 
 }

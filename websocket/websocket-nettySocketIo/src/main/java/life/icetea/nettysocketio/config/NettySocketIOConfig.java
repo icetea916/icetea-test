@@ -1,10 +1,10 @@
 package life.icetea.nettysocketio.config;
 
 import com.corundumstudio.socketio.SocketConfig;
+import com.corundumstudio.socketio.SocketIONamespace;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.SpringAnnotationScanner;
-import life.icetea.nettysocketio.constant.CommonConstants;
-import life.icetea.nettysocketio.domain.PushMessage;
+import life.icetea.nettysocketio.listener.ChatNameSpaceListener;
 import life.icetea.nettysocketio.listener.MyAuthorizationListener;
 import life.icetea.nettysocketio.listener.MyExceptionListener;
 import life.icetea.nettysocketio.listener.MyPingListener;
@@ -45,20 +45,28 @@ public class NettySocketIOConfig {
         // 添加心跳监听
         server.addPingListener(new MyPingListener());
         // 处理自定义的事件，与连接监听类似,也可用@Event注解方式
-        server.addEventListener(CommonConstants.EVENT_PUSH, PushMessage.class, (client, data, ackSender) -> {
-            // TODO do something
-        });
-
-        //创建命名空间
-//        SocketIONamespace socketIONamespace = server.addNamespace("/test");
-//        socketIONamespace.addListeners(testNameSpaceListener);
-//        socketIONamespace.addPingListener(new MyPingListener());
+//        server.addEventListener(CommonConstants.EVENT_PUSH, PushMessage.class, (client, data, ackSender) -> {
+//        });
 
         // 开启socket服务
         server.start();
 
         return server;
     }
+
+    /**
+     * 聊天 chat namespace
+     */
+    @Bean("chat-namespace")
+    public SocketIONamespace chatNameSpace(SocketIOServer server) {
+        // 创建聊天命名空间
+        SocketIONamespace socketIONamespace = server.addNamespace("/chat");
+        socketIONamespace.addListeners(new ChatNameSpaceListener(server));
+        socketIONamespace.addPingListener(new MyPingListener());
+
+        return socketIONamespace;
+    }
+
 
     /**
      * 配置spring注解扫描器
