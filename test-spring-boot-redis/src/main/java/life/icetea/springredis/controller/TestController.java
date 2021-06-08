@@ -3,11 +3,11 @@ package life.icetea.springredis.controller;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,6 +25,7 @@ import java.util.List;
  */
 @RequestMapping("test")
 @Controller
+@Slf4j
 public class TestController {
 
     @Autowired
@@ -35,11 +36,18 @@ public class TestController {
      */
     @RequestMapping("create-obj")
     public void test1() {
+        String key = "icetea:testobj";
         ValueOperations valueOperations = redisTemplate.opsForValue();
         LinkedHashMap<String, Object> linkedHashMap = new LinkedHashMap();
         linkedHashMap.put("username", "icetea");
         linkedHashMap.put("age", 18);
-        valueOperations.set("icetea:testobj", linkedHashMap);
+        // 存
+        valueOperations.set(key, linkedHashMap);
+
+        // 取出来是linkedHashMap类型
+        Object o = valueOperations.get(key);
+        Class<?> aClass = o.getClass();
+        log.info("classType = {}", aClass.getName());
     }
 
     /**
@@ -53,18 +61,11 @@ public class TestController {
         linkedHashMap.put("age", 18);
         String s = JSON.toJSONString(linkedHashMap);
         valueOperations.set("icetea:teststr", s);
-        System.out.println(s);
-    }
 
-    /**
-     * 取
-     */
-    @RequestMapping("get-obj")
-    public void testGetObj() {
-        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<Object>(Object.class));
-        ValueOperations valueOperations = redisTemplate.opsForValue();
-        Object o = valueOperations.get("icetea:testobj");
-        System.out.println(o);
+        // 取出来是string类型
+        Object o = valueOperations.get("icetea:teststr");
+        Class<?> aClass = o.getClass();
+        log.info("classType = {}", aClass.getName());
     }
 
     /**
