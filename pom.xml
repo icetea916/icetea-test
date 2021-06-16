@@ -26,6 +26,7 @@
         <module>java-feature</module>
         <module>test-springAOP</module>
         <module>test-open-office</module>
+        <module>test-rabbitmq</module>
     </modules>
 
     <properties>
