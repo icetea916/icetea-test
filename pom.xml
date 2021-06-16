@@ -22,6 +22,7 @@
         <module>test-mybatis</module>
         <module>test-lombok</module>
         <module>rabbit-mq</module>
+        <module>scoketio-client-1</module>
     </modules>
 
     <properties>

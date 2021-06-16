@@ -21,7 +21,7 @@
         </environment>
     </environments>
     <mappers>
-<!--        <mapper class="life.icetea.test.mybatis.demo1.BlogMapper"/>-->
+<!--        <mapper class="BlogMapper"/>-->
         <mapper resource="life/icetea/test/mybatis/demo1/BlogMapper.xml"/>
     </mappers>
 </configuration>
