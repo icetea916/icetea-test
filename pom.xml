@@ -3,30 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
-    </parent>
-
     <groupId>icetea.test</groupId>
     <artifactId>icetea-test</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
         <module>test-thread</module>
         <module>test-poi</module>
-        <module>test-io</module>
-        <module>test-rxJava</module>
-        <module>websocket/webSocket-spring</module>
-        <module>websocket/websocket-nettySocketIo</module>
-        <module>websocket/websocket-javaApi</module>
-        <module>websocket/websocket-stomp</module>
+        <module>websocket/spring-websocket</module>
+        <module>websocket/netty-socketio</module>
+        <module>websocket/java-websocket</module>
         <module>java-feature</module>
         <module>test-springAOP</module>
         <module>test-open-office</module>
         <module>test-rabbitmq</module>
+        <module>test-shiro</module>
+        <module>test-spring-boot-redis</module>
+        <module>test-mybatis</module>
     </modules>
 
     <properties>
@@ -34,6 +28,18 @@
         <maven.compile.source>1.8</maven.compile.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.5.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -53,7 +59,6 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.73</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -70,4 +75,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

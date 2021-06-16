@@ -1,7 +1,5 @@
 package icetea.test.spring.aop.test1;
 
-import org.springframework.stereotype.Component;
-
 public class Girl implements IBuy {
 
     @Override
