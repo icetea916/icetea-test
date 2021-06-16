@@ -17,11 +17,11 @@
         <module>java-feature</module>
         <module>test-springAOP</module>
         <module>test-open-office</module>
-        <module>test-rabbitmq</module>
         <module>test-shiro</module>
         <module>test-spring-boot-redis</module>
         <module>test-mybatis</module>
         <module>test-lombok</module>
+        <module>rabbit-mq</module>
     </modules>
 
     <properties>
