@@ -60,10 +60,7 @@ public class ChatClient {
 //                 退出
 //                break;
 //            }
-        MyMessage msg = new MyMessage();
-        msg.setUsername("icetea-java-client");
-        msg.setAge(19);
-        msg.setContent(content);
+        MyMessage msg = new MyMessage("icetea", 19, content);
         socket.emit("message", msg);
 //        }
 

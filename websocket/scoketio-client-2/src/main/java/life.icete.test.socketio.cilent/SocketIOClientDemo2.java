@@ -3,8 +3,6 @@ package life.icete.test.socketio.cilent;
 import io.socket.client.IO;
 import io.socket.client.Manager;
 import io.socket.client.Socket;
-import io.socket.engineio.client.transports.Polling;
-import io.socket.engineio.client.transports.WebSocket;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.URISyntaxException;
@@ -12,6 +10,8 @@ import java.util.Scanner;
 
 /**
  * socket io client demo 2
+ * <p>
+ * 请注意nettysocketio支持的socket.io标准的版本 socket.io server version >=3.0,
  * <p>
  * 使用2.0.1版本socketio client
  * 文档：https://socketio.github.io/socket.io-client-java/installation.html
@@ -22,18 +22,18 @@ import java.util.Scanner;
 @Slf4j
 public class SocketIOClientDemo2 {
 
-    public static String username = "icetea";
-    public static String url = "http://127.0.0.1:9099?loginUserName=" + username;
+    public static String token = "icetea";
+    public static String url = "http://127.0.0.1:9099?token=" + token;
 
     public static void main(String args[]) throws URISyntaxException, InterruptedException {
         // socket连接参数设置
         IO.Options options = IO.Options.builder()
                 // IO factory options
                 .setForceNew(false) // 是否创建一个新的manager instance, manager instance负责底层连接逻辑, default: false
-                .setMultiplex(true)
+//                .setMultiplex(true)
 
                 // low-level engine options
-                .setTransports(new String[]{Polling.NAME, WebSocket.NAME})
+//                .setTransports(new String[]{Polling.NAME, WebSocket.NAME})
                 .setUpgrade(true) // 是否将long-polling升级到更好的websocket，default: true
                 .setRememberUpgrade(false) // 为true，则如果之前的连接通过websocket，则下一个连接会绕过upgrade直接建立websocket连接
                 .setPath("/socket.io") // 用来连接websocket器的路径，必须与server配置的相同，该配置和url中的path不一样，url中的path指的是namespace, default: /socket.io
@@ -42,7 +42,7 @@ public class SocketIOClientDemo2 {
 
                 // Manager options
                 .setReconnection(true)  // 是否重连,默认true
-                .setReconnectionAttempts(Integer.MAX_VALUE) // 最大重试次数
+                .setReconnectionAttempts(2) // 最大重试次数
                 .setReconnectionDelay(1_000)    // 重连间隔 单位ms
                 .setReconnectionDelayMax(2_000) // 最大重连时间, 即一直连不上的最大时间 单位ms
                 .setRandomizationFactor(0.5)
@@ -93,14 +93,13 @@ public class SocketIOClientDemo2 {
                 System.out.println("请输入消息(回车发送):");
                 String content = input.next();
                 if ("exit".equals(content)) {
-                    // 退出
+                    log.info("关闭连接......");
+                    socket.close();
                     break;
                 }
                 socket.emit("message-model", content);
             }
         }
-        log.info("关闭连接......");
-        socket.close();
     }
 
 }

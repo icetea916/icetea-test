@@ -2,14 +2,13 @@ package life.icetea.test.nettysocketio.domain;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class MyMessage implements Serializable {
+public class MyMessage {
 
     private String username;
     private Integer age;
     private String content;
+    private MyMessage msg;
 
     public MyMessage() {
     }
@@ -19,4 +18,5 @@ public class MyMessage implements Serializable {
         this.age = age;
         this.content = content;
     }
+
 }

@@ -11,4 +11,5 @@ public class MyPingListener implements PingListener {
     public void onPing(SocketIOClient client) {
         log.info("heartbeat sessionId={}", client.getSessionId().toString());
     }
+
 }

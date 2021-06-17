@@ -1,5 +1,6 @@
 package life.icetea.test.nettysocketio.client;
 
+import com.alibaba.fastjson.JSONObject;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import life.icetea.test.nettysocketio.domain.MyMessage;
@@ -20,15 +21,15 @@ import java.util.Scanner;
 @Slf4j
 public class SocketIOClientDemo {
 
-    public static String username = "icetea";
-    public static String url = "http://127.0.0.1?loginUserName=" + username;
+    public static String token = "icetea";
+    public static String url = "http://127.0.0.1:9099?token=" + token;
 
     public static void main(String args[]) throws URISyntaxException, InterruptedException {
         // client连接参数设置
         IO.Options options = new IO.Options();
 //        options.port = 9099;
         // host、ip后的路径
-//        options.path = "/socket.io";
+        options.path = "/socket.io";
 //        options.transports = new String[]{"websocket"};
         options.reconnection = true; // 进行重连,默认true
         // 重连间隔时间 单位ms
@@ -76,17 +77,13 @@ public class SocketIOClientDemo {
                 System.out.println("请输入消息(回车发送):");
                 String content = input.next();
                 if ("exit".equals(content)) {
-                    // 退出
-                    break;
+                    log.info("关闭连接......");
+                    socket.close();
                 }
-                MyMessage msg = new MyMessage();
-                msg.setUsername(username);
-                msg.setAge(19);
-                msg.setContent(content);
-                socket.emit("message-model", msg);
+                MyMessage msg = new MyMessage("icetea", 18, content);
+                socket.emit("message", JSONObject.toJSON(msg));
             }
         }
-        log.info("关闭连接......");
-        socket.close();
     }
+
 }

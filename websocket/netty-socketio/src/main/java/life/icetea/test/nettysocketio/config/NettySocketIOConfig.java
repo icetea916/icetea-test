@@ -4,19 +4,14 @@ import com.corundumstudio.socketio.SocketConfig;
 import com.corundumstudio.socketio.SocketIONamespace;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.SpringAnnotationScanner;
-import life.icetea.test.nettysocketio.constant.CommonConstants;
-import life.icetea.test.nettysocketio.domain.PushMessage;
-import life.icetea.test.nettysocketio.listener.ChatNameSpaceListener;
-import life.icetea.test.nettysocketio.listener.MyAuthorizationListener;
-import life.icetea.test.nettysocketio.listener.MyExceptionListener;
-import life.icetea.test.nettysocketio.listener.MyPingListener;
+import life.icetea.test.nettysocketio.listener.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * netty socketio config
- *
+ * <p>
  * github:
  *
  * @author icetea
@@ -57,37 +52,18 @@ public class NettySocketIOConfig {
         // worker线程数量，0 = current_processors_amount * 2
         config.setWorkerThreads(10);
         config.setAllowCustomRequests(true);
-        // 心跳Ping消息超时时间（毫秒），默认60秒，这个时间间隔内没有接收到心跳消息就会发送超时事件
-        config.setPingTimeout(3000);
+        // 心跳Ping消息超时时间（毫秒),默认60秒,当超过这个时间没有接收到心跳消息就会断开连接,
+        // 例如： 心跳间隔为5s，心跳超时未2s，在收到一次心跳开始计时，应在第5s的时候收到下一次心跳，但如果没有收到，server会再等2s，如果还没有收到则会判定心跳超时，断开该客户端连接
+        config.setPingTimeout(2000);
         // 心跳Ping消息间隔（毫秒），默认25秒。客户端向服务器发送一条心跳消息间隔
-        config.setPingInterval(10000);
+        config.setPingInterval(3000);
 
         // 创建socketIO server
         SocketIOServer server = new SocketIOServer(config);
         // 添加心跳监听，该方法是对所有namespace添加心跳监听，也可对单个namespace添加, 如下有例子
         server.addPingListener(new MyPingListener());
-        // 处理自定义的事件，与连接监听类似,也可用@Event注解方式
-//        server.addEventListener(CommonConstants.EVENT_PUSH, PushMessage.class, (client, data, ackSender) -> {
-//        });
-        // 处理connect时间，与@OnConnect相同
-//        server.addConnectListener((client) ->{});
-        // 处理disConnect时间，与@OnDisconnect相同
-//        server.addDisconnectListener((client) ->{});
-        // 处理disConnect时间，与@OnDisconnect相同
-//        server.addDisconnectListener((client) -> {});
-
-        // 创建一个namespace
-        SocketIONamespace iceteaNamespace = server.addNamespace("icetea");
-        // 为盖namespace添加心跳监听
-        iceteaNamespace.addPingListener(client -> {
-            log.info("pingListener ,sessionId={}, nameSpace={}", client.getSessionId().toString(), client.getNamespace());
-        });
-//        iceteaNamespace.addConnectListener(client -> {});
-//        iceteaNamespace.addDisconnectListener(client -> {});
-        iceteaNamespace.addEventListener(CommonConstants.EVENT_PUSH, PushMessage.class, (client, data, ackSender) -> {
-            log.info("eventListener, sessionId={}, namespace={}", client.getSessionId().toString(), client.getNamespace());
-        });
-//        iceteaNamespace.addListeners();
+        // 添加监听器
+        server.addListeners(new MyEventListener(server));
 
         // 开启socket服务
         server.start();

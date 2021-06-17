@@ -14,6 +14,7 @@
         <module>websocket/spring-websocket</module>
         <module>websocket/netty-socketio</module>
         <module>websocket/java-websocket</module>
+        <module>websocket/scoketio-client-2</module>
         <module>java-feature</module>
         <module>test-springAOP</module>
         <module>test-open-office</module>
@@ -22,7 +23,6 @@
         <module>test-mybatis</module>
         <module>test-lombok</module>
         <module>rabbit-mq</module>
-        <module>scoketio-client-1</module>
     </modules>
 
     <properties>
@@ -60,6 +60,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.73</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.1</version>
         </dependency>
     </dependencies>
 
