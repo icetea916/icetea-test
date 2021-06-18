@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>NETTY SOCKET.IO DEMO</title>
+    <title>SOCKET.IO DEMO</title>
     <base>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/socket.io/2.1.1/socket.io.js"></script>
@@ -31,8 +31,7 @@
 </head>
 
 <body>
-<button id="test-map-message">测试map消息</button>
-<button id="test-model-message">测试model消息</button>
+<button id="message">测试model消息</button>
 <div id="console" class="well"></div>
 </body>
 <script type="text/javascript">
@@ -61,20 +60,12 @@
         $('#console').prepend(element);
     });
 
-    // 发送map消息
-    $("#test-map-message").click(function () {
-        var msg = "我很好的,是的．icetea";
-        socket.emit('message-map', {message: msg});
-    });
-
     // 发送model消息
-    $("#test-model-message").click(function () {
+    $("#message").click(function () {
         var msg = {
-            username: "icetea",
-            age: 18,
             content: "测试发送消息自动转换成model类"
         };
-        socket.emit('message-model', msg, "message string");
+        socket.emit('message-model', msg);
     });
 
 </script>

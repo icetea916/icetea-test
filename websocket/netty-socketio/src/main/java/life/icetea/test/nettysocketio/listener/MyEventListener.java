@@ -1,19 +1,15 @@
 package life.icetea.test.nettysocketio.listener;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.corundumstudio.socketio.AckRequest;
+import com.corundumstudio.socketio.BroadcastOperations;
 import com.corundumstudio.socketio.SocketIOClient;
+import com.corundumstudio.socketio.SocketIONamespace;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.OnConnect;
 import com.corundumstudio.socketio.annotation.OnDisconnect;
 import com.corundumstudio.socketio.annotation.OnEvent;
-import life.icetea.test.nettysocketio.domain.MyMessage;
+import life.icetea.test.nettysocketio.domain.PushMessage;
+import life.icetea.test.nettysocketio.domain.User;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONArray;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Slf4j
 public class MyEventListener {
@@ -21,11 +17,40 @@ public class MyEventListener {
     private SocketIOServer socketIOServer;
 
     /**
-     * 监听客户端连接
+     * 处理消息事件
+     * <p>
+     * 注意:
+     * 1. 自定义参数顺序要和客户端传来的顺序,如果不一致会报错
+     * 2. java-client传参是不能直接传javaBean，并且不能直接将javaBean转换成json字符串，需要转换为对应的map树才可以，例如使用fastjson构建JSONObject
+     */
+    @OnEvent("message")
+    public void onMessage(SocketIOClient client, PushMessage pushMessage) {
+        log.info("接收消息: sessionId={}, message={}", client.getSessionId(), pushMessage.getContent());
+        // 广播消息
+        SocketIONamespace namespace = socketIOServer.getNamespace(client.getNamespace().toString());
+        BroadcastOperations broadcastOperations = namespace.getBroadcastOperations();
+        User user = client.get("user");
+        pushMessage.setUsername(user.getUsername());
+        pushMessage.setAge(user.getAge());
+        broadcastOperations.sendEvent("message", pushMessage);
+    }
+
+    /**
+     * 客户端连接event
+     * 1. 查询用户的信息并保存至client中
      */
     @OnConnect
     public void onConnect(SocketIOClient client) {
-        log.info("连接成功: sissionId={}", client.getSessionId());
+        log.info("连接成功: sessionId={}", client.getSessionId());
+
+        // 根据token查询用户数据
+        String token = client.getHandshakeData().getSingleUrlParam("token");
+        User user = new User();
+        user.setUsername("icetea");
+        user.setAge(18);
+        // 将user信息保存到client中
+        client.set("user", user);
+
         log.info("client nameSpaces={}, rooms={}", client.getNamespace().getName(), client.getAllRooms());
     }
 
@@ -34,29 +59,7 @@ public class MyEventListener {
      */
     @OnDisconnect
     public void onDisconnect(SocketIOClient client) {
-        log.info("断开连接,sessonId={}", client.getSessionId());
-    }
-
-    /**
-     * 处理消息事件
-     * 注意：该框架最好使用string接受参数，如果使用map或这model类框架使用jackson进行解析会对不同平台的客户端参数存在问题，例如js客户端可以但是Java和ios客户端不可以，
-     */
-    @OnEvent("message-map")
-    public void onMessage(SocketIOClient client, AckRequest ackRequest, Map<String, Object> message) {
-        log.info("接受消息 message: sessionId={}, message={}", client.getSessionId(), message.toString());
-        // 返回消息
-        client.sendEvent("message", "已收到发送的消息");
-    }
-
-    /**
-     * 处理消息事件-model,
-     * 注意: 自定义参数顺序要和客户端传来的顺序一致,该框架会自动jackson序列化,如果不一致会报错
-     */
-    @OnEvent("message")
-    public void onMessage(SocketIOClient client, MyMessage message) {
-        log.info("接收消息: sessionId={}, message={}", client.getSessionId(), message.toString());
-        // 返回消息
-        client.sendEvent("message", "已收到发送的消息");
+        log.info("断开连接,sessionId={}", client.getSessionId());
     }
 
     public MyEventListener(SocketIOServer socketIOServer) {

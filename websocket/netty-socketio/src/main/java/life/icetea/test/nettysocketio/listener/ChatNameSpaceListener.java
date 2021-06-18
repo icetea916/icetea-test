@@ -7,7 +7,7 @@ import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.annotation.OnConnect;
 import com.corundumstudio.socketio.annotation.OnDisconnect;
 import com.corundumstudio.socketio.annotation.OnEvent;
-import life.icetea.test.nettysocketio.domain.MyMessage;
+import life.icetea.test.nettysocketio.domain.PushMessage;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -47,7 +47,7 @@ public class ChatNameSpaceListener {
      * 处理消息事
      */
     @OnEvent("message")
-    public void onSendMessage(SocketIOClient client, AckRequest ackRequest, MyMessage message) {
+    public void onSendMessage(SocketIOClient client, AckRequest ackRequest, PushMessage message) {
         log.info("接受消息model类详细自动转换 message: sessionId={}, message={}", client.getSessionId(), message);
         // 返回消息
         BroadcastOperations broadcastOperations = client.getNamespace().getBroadcastOperations();
