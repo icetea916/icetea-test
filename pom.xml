@@ -23,6 +23,7 @@
         <module>test-mybatis</module>
         <module>test-lombok</module>
         <module>rabbit-mq</module>
+        <module>icetea-spring-mvc</module>
     </modules>
 
     <properties>
@@ -65,6 +66,11 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.9</version>
         </dependency>
     </dependencies>
 
