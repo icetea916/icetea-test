@@ -24,6 +24,7 @@
         <module>test-lombok</module>
         <module>rabbit-mq</module>
         <module>icetea-spring-mvc</module>
+        <module>think-in-spring</module>
     </modules>
 
     <properties>
