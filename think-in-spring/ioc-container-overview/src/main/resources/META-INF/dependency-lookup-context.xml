@@ -12,4 +12,9 @@
         <property name="targetBeanName" value="user"/>
     </bean>
 
+    <bean id="superUser" class="life.icetea.test.thinkinspring.ioc.overview.domain.SuperUser"
+          parent="user" primary="true">
+        <property name="address" value="北京"/>
+    </bean>
+
 </beans>

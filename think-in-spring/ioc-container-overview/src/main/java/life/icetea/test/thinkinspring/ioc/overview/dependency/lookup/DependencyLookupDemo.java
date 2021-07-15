@@ -1,12 +1,16 @@
 package life.icetea.test.thinkinspring.ioc.overview.dependency.lookup;
 
+import life.icetea.test.thinkinspring.ioc.overview.annotation.Super;
 import life.icetea.test.thinkinspring.ioc.overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Map;
+
 /**
- * 依赖查找示例
+ * 不同方式的 依赖查找
  */
 public class DependencyLookupDemo {
 
@@ -14,10 +18,61 @@ public class DependencyLookupDemo {
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("META-INF/dependency-lookup-context.xml");
         lookupInTime(beanFactory);
         lookupByLazy(beanFactory);
+        lookupByType(beanFactory);
+        lookupCollectionByType(beanFactory);
+        lookupByIdAndType(beanFactory);
+        lookupByAnnotation(beanFactory);
     }
 
     /**
-     * 实时查找依赖
+     * 根据注解查找
+     *
+     * @param beanFactory
+     */
+    private static void lookupByAnnotation(BeanFactory beanFactory) {
+        if (beanFactory instanceof ListableBeanFactory) {
+            ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
+            Map<String, User> beans = (Map) listableBeanFactory.getBeansWithAnnotation(Super.class);
+            System.out.println("根据注解annotation查找bean集合:" + beans);
+        }
+    }
+
+    /**
+     * 根据id和type查询bean
+     *
+     * @param beanFactory
+     */
+    private static void lookupByIdAndType(BeanFactory beanFactory) {
+        User user = beanFactory.getBean("user", User.class);
+        System.out.println("根据id和type查找:" + user);
+    }
+
+
+    /**
+     * 根据类型查找bean的集合
+     *
+     * @param beanFactory
+     */
+    private static void lookupCollectionByType(BeanFactory beanFactory) {
+        if (beanFactory instanceof ListableBeanFactory) {
+            ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
+            Map<String, User> map = listableBeanFactory.getBeansOfType(User.class);
+            System.out.println("根据类型查找bean集合:" + map);
+        }
+    }
+
+    /**
+     * 按照类型查找
+     *
+     * @param beanFactory
+     */
+    private static void lookupByType(BeanFactory beanFactory) {
+        User bean = beanFactory.getBean(User.class);
+        System.out.println("根据类型查找:" + bean);
+    }
+
+    /**
+     * 实时查找,根据bean id
      */
     public static void lookupInTime(BeanFactory beanFactory) {
         User user = (User) beanFactory.getBean("user");
@@ -28,7 +83,8 @@ public class DependencyLookupDemo {
      * 延迟查找依赖
      */
     public static void lookupByLazy(BeanFactory beanFactory) {
-        ObjectFactory<User> objectFactory = (ObjectFactory)beanFactory.getBean("objectFactory");
+        // objectFactory不生成新的bean, 用factoryBean查找时会生成新的bean
+        ObjectFactory<User> objectFactory = (ObjectFactory) beanFactory.getBean("objectFactory");
         User user = objectFactory.getObject();
         System.out.println("延迟查找: " + user);
     }
