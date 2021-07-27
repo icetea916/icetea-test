@@ -1,4 +1,4 @@
-package life.icetea.test.lambada.domain;
+package life.icetea.test.lambda.domain;
 
 import lombok.Data;
 

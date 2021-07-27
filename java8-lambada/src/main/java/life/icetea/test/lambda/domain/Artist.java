@@ -1,5 +1,6 @@
-package life.icetea.test.lambada.domain;
+package life.icetea.test.lambda.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
  * 艺术家: 创作音乐的个人或团队
  */
 @Data
+@AllArgsConstructor
 public class Artist {
 
     /**
@@ -17,7 +19,7 @@ public class Artist {
     /**
      * 乐队成员
      */
-    private List<String> members;
+    private List<Artist> members;
     /**
      * 乐队来自哪里
      */
