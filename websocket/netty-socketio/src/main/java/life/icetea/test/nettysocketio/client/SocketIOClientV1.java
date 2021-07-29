@@ -3,16 +3,19 @@ package life.icetea.test.nettysocketio.client;
 import com.alibaba.fastjson.JSONObject;
 import io.socket.client.IO;
 import io.socket.client.Socket;
-import life.icetea.test.nettysocketio.domain.PushMessage;
+import io.socket.engineio.client.transports.Polling;
+import io.socket.engineio.client.transports.WebSocket;
+import life.icetea.test.nettysocketio.domain.Message;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.URISyntaxException;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * socket io client demo
+ * socket io client demo 版本1.0
  * <p>
  * 使用1.0.1版本socketio client
  * 文档：https://socketio.github.io/socket.io-client-java/installation.html
@@ -21,10 +24,15 @@ import java.util.concurrent.Executors;
  * @author icetea
  */
 @Slf4j
-public class SocketIOClientDemo {
+public class SocketIOClientV1 {
 
-    public static String token = "icetea";
-    public static String url = "http://127.0.0.1:9099?token=" + token;
+    private static final String USERNAME = "icetea";
+    private static final Integer AGE = 18;
+    private static final String TOKEN = "iceteatoken123456";
+    public static String url = "http://127.0.0.1:9099" +
+            "?token=" + TOKEN +
+            "&username=" + USERNAME +
+            "&age=" + AGE;
 
     public static void main(String args[]) throws URISyntaxException, InterruptedException {
         // client连接参数设置
@@ -32,7 +40,8 @@ public class SocketIOClientDemo {
 //        options.port = 9099;
         // host、ip后的路径
         options.path = "/socket.io";
-//        options.transports = new String[]{"websocket"};
+        // 设定传输方式列表选择, 系统会从中选择最优的方式
+        options.transports = new String[]{WebSocket.NAME, Polling.NAME};
         options.reconnection = true; // 进行重连,默认true
         // 重连间隔时间 单位ms
         options.reconnectionDelay = 1000;
@@ -44,7 +53,6 @@ public class SocketIOClientDemo {
         options.timeout = 1000;
         // client创建
         Socket socket = IO.socket(url, options);
-
         // 事件绑定
         socket.on(Socket.EVENT_CONNECTING, (data) -> log.info("正在连接 connecting"))
                 .on(Socket.EVENT_RECONNECTING, (data) -> log.error("重新连接 reconnect"))
@@ -63,13 +71,26 @@ public class SocketIOClientDemo {
                     Exception e = (Exception) exception[0];
                     log.error("连接出错 connect error", e);
                 });
-
         // 绑定接收消息事件（自定义）
         socket.on("message", (data) -> log.info("接收消息： message={}", data.toString()));
 
         // 连接
-        socket.open();
+//        socket.open();
 
+        // 配置命名空间
+        Socket chatNamespace = socket.io().socket("/chat");
+        chatNamespace.on("message", (objs) -> {
+            // 获取第二个参数,  第一个参数为event时间名称
+            org.json.JSONObject message = (org.json.JSONObject) objs[1];
+            log.info("接收消息: message={}", message.toString());
+        });
+        // 事件绑定
+        chatNamespace.on(Socket.EVENT_CONNECTING, (data) -> log.info("正在连接 connecting"))
+                .on(Socket.EVENT_CONNECT_TIMEOUT, (data) -> log.info("连接超时 connect timeout"))
+                .on(Socket.EVENT_CONNECT, (data) -> log.info("连接成功 connect"))
+                .on(Socket.EVENT_DISCONNECT, (data) -> log.info("断开连接 disconnect"))
+                .on(Socket.EVENT_CONNECT_ERROR, (exception) -> log.error("连接出错 connect error", (Exception) exception[0]));
+        chatNamespace.open();
 
         //创建Executor- Service，通 过它你可以 向线程池提 交任务
         ExecutorService executor = Executors.newCachedThreadPool();
@@ -82,10 +103,10 @@ public class SocketIOClientDemo {
                 String content = input.nextLine();
                 if ("exit".equals(content)) {
                     log.info("关闭连接......");
-                    socket.close();
+                    chatNamespace.close();
                 }
-                PushMessage msg = new PushMessage(null, null, content);
-                socket.emit("message", JSONObject.toJSON(msg));
+                Message msg = new Message(new Date(), USERNAME, "hello world!");
+                chatNamespace.emit("message", JSONObject.toJSON(msg));
             }
         });
     }

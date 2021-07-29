@@ -15,31 +15,27 @@ public class MyExceptionListener extends ExceptionListenerAdapter {
 
     @Override
     public void onEventException(Exception e, List<Object> args, SocketIOClient client) {
-        log.info("sessionId={} disconnected", client.getSessionId());
-        client.disconnect();
+        log.error(e.getMessage(), e);
     }
 
     @Override
     public void onDisconnectException(Exception e, SocketIOClient client) {
-        log.info("sessionId={} disconnected", client.getSessionId());
-        client.disconnect();
+        log.error(e.getMessage(), e);
     }
 
     @Override
     public void onConnectException(Exception e, SocketIOClient client) {
-        log.info("sessionId={} disconnected", client.getSessionId());
-        client.disconnect();
+        log.error(e.getMessage(), e);
     }
 
     @Override
     public void onPingException(Exception e, SocketIOClient client) {
-        log.info("sessionId={} ping", client.getSessionId());
-        client.disconnect();
+        log.error(e.getMessage(), e);
     }
 
     @Override
     public boolean exceptionCaught(ChannelHandlerContext ctx, Throwable e) {
-        ctx.close();
+        log.error(e.getMessage(), e);
         return true;
     }
 

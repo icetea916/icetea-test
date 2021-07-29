@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * netty socketio config
+ * netty socketio config, 只支持: socket.io v2.x 版本
  * <p>
  * github:
  *
@@ -54,9 +54,9 @@ public class NettySocketIOConfig {
         config.setAllowCustomRequests(true);
         // 心跳Ping消息超时时间（毫秒),默认60秒,当超过这个时间没有接收到心跳消息就会断开连接,
         // 例如： 心跳间隔为5s，心跳超时未2s，在收到一次心跳开始计时，应在第5s的时候收到下一次心跳，但如果没有收到，server会再等2s，如果还没有收到则会判定心跳超时，断开该客户端连接
-        config.setPingTimeout(2000);
+        config.setPingTimeout(3000);
         // 心跳Ping消息间隔（毫秒），默认25秒。客户端向服务器发送一条心跳消息间隔
-        config.setPingInterval(3000);
+        config.setPingInterval(10000);
 
         // 创建socketIO server
         SocketIOServer server = new SocketIOServer(config);
@@ -69,20 +69,6 @@ public class NettySocketIOConfig {
         server.start();
         return server;
     }
-
-    /**
-     * 聊天 chat namespace
-     */
-    @Bean
-    public SocketIONamespace chatNameSpace(SocketIOServer server) {
-        // 创建聊天命名空间
-        SocketIONamespace socketIONamespace = server.addNamespace("/chat");
-        socketIONamespace.addListeners(new ChatNameSpaceListener(server));
-        socketIONamespace.addPingListener(new MyPingListener());
-
-        return socketIONamespace;
-    }
-
 
     /**
      * 配置spring注解扫描器
