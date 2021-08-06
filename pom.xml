@@ -26,6 +26,8 @@
         <module>icetea-spring-mvc</module>
         <module>think-in-spring</module>
         <module>java8-lambada</module>
+        <module>test-netty</module>
+        <module>test-java-nio</module>
     </modules>
 
     <properties>
