@@ -4,24 +4,169 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-    <properties resource="mybatis.properties">
-        <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+    <!--注意mybatis的配置标签是有顺序的,若顺序错误会导致启动失败-->
+
+    <!-- 通过properties标签，读取java配置文件的内容 -->
+    <properties resource="db.properties">
+        <!--注意:如果一个属性在不只一个地方进行了配置，那么，MyBatis 将按照下面的顺序来加载：
+            1. 先加载properties中property标签声明的属性:
+            2. 然后根据 properties 元素中的 resource 属性读取类路径下属性文件，或根据 url 属性指定的路径读取属性文件，并覆盖之前读取过的同名属性。
+            3. 最后读取作为方法参数传递的属性，并覆盖之前读取过的同名属性。 最后读取作为方法参数传递的属性，并覆盖之前读取过的同名属性。
+        -->
+        <property name="db.username" value="root"/>
+        <property name="db.password" value="123456"/>
+        <!--从 MyBatis 3.4.2 开始，你可以为占位符指定一个默认值。如下
+            但是这个特性默认是关闭的。要启用这个特性，需要添加一个特定的属性来开启这个特性。例如：
+            <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/>
+            注意: 如果你在属性名中使用了 ":" 字符（如：db:username），或者在 SQL 映射中使用了 OGNL 表达式的三元运算符（如： ${tableName != null ? tableName : 'global_constants'}）
+            <property name="org.apache.ibatis.parsing.PropertyParser.default-value-separator" value="?:"/> 修改默认值的分隔符
+        -->
+        <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/>
+        <property name="org.apache.ibatis.parsing.PropertyParser.default-value-separator" value=":"/>
     </properties>
 
+    <!--mybatis的全局配置项:例如开二级缓存和懒加载-->
+    <settings>
+        <!-- 全局范围内启用或禁用映射器缓存, 默认值=true -->
+        <setting name="cacheEnabled" value="true"/>
+        <!-- 延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置 fetchType 属性来覆盖该项的开关状态, 默认值=false-->
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <!-- 开启时，任一方法的调用都会加载该对象的所有延迟加载属性。 否则，每个延迟加载属性会按需加载（参考 lazyLoadTriggerMethods), 默认值=false （在 3.4.1 及之前的版本中默认为 true）-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- 是否允许单个语句返回多结果集（需要数据库驱动支持）, 默认值=true -->
+        <setting name="multipleResultSetsEnabled" value="true"/>
+        <!-- 使用列标签代替列名。实际表现依赖于数据库驱动，具体可参考数据库驱动的相关文档，或通过对比测试来观察, 默认值=true -->
+        <setting name="useColumnLabel" value="true"/>
+        <!-- 允许 JDBC 支持自动生成主键，需要数据库驱动支持。如果设置为 true，将强制使用自动生成主键。尽管一些数据库驱动不支持此特性，但仍可正常工作（如 Derby）,默认值=false -->
+        <setting name="useGeneratedKeys" value="false"/>
+        <!-- 指定 MyBatis 应如何自动映射列到字段或属性。
+                NONE 表示关闭自动映射；
+                PARTIAL 只会自动映射没有定义嵌套结果映射的字段;
+                FULL 会自动映射任何复杂的结果集（无论是否嵌套;
+                默认值=PARTIAL
+        -->
+        <setting name="autoMappingBehavior" value="PARTIAL"/>
+        <!--
+            指定发现自动映射目标未知列（或未知属性类型）的行为。
+                NONE: 不做任何反应
+                WARNING: 输出警告日志（'org.apache.ibatis.session.AutoMappingUnknownColumnBehavior' 的日志等级必须设置为 WARN）
+                FAILING: 映射失败 (抛出 SqlSessionException)
+            默认值=NONE
+        -->
+        <setting name="autoMappingUnknownColumnBehavior" value="NONE"/>
+        <!-- 配置默认的执行器。
+            SIMPLE 就是普通的执行器；
+            REUSE 执行器会重用预处理语句（PreparedStatement）；
+            BATCH 执行器不仅重用语句还会执行批量更新
+            默认值=SIMPLE
+        -->
+        <setting name="defaultExecutorType" value="SIMPLE"/>
+        <!-- 设置超时时间，它决定数据库驱动等待数据库响应的秒数 ,默认值=未设置 (null) -->
+        <setting name="defaultStatementTimeout" value="25000"/>
+        <!--为驱动的结果集获取数量（fetchSize）设置一个建议值。此参数只可以在查询设置中被覆盖。 默认值=未设置 (null) -->
+<!--        <setting name="defaultFetchSize" value="100"/>-->
+        <!-- 指定语句默认的滚动策略。（新增于 3.5.2）
+             FORWARD_ONLY | SCROLL_SENSITIVE | SCROLL_INSENSITIVE | DEFAULT（等同于未设置）
+        -->
+        <setting name="defaultResultSetType" value="DEFAULT"/>
+        <!--是否允许在嵌套语句中使用分页（RowBounds）。如果允许使用则设置为 false ,默认值=false-->
+        <setting name="safeRowBoundsEnabled" value="false"/>
+        <!-- 是否允许在嵌套语句中使用结果处理器（ResultHandler）。如果允许使用则设置为 false, 默认值=true-->
+        <setting name="safeResultHandlerEnabled" value="true"/>
+        <!-- 是否开启驼峰命名自动映射，即从经典数据库列名 A_COLUMN 映射到经典 Java 属性名 aColumn , 默认值为false-->
+        <setting name="mapUnderscoreToCamelCase" value="false"/>
+        <!--MyBatis 利用本地缓存机制（Local Cache）防止循环引用和加速重复的嵌套查询。
+            默认值为 SESSION，会缓存一个会话中执行的所有查询。
+            若设置值为 STATEMENT，本地缓存将仅用于执行语句，对相同 SqlSession 的不同查询将不会进行缓存
+        -->
+        <setting name="localCacheScope" value="SESSION"/>
+        <!--
+            当没有为参数指定特定的 JDBC 类型时，空值的默认 JDBC 类型。
+            某些数据库驱动需要指定列的 JDBC 类型，多数情况直接用一般类型即可，比如 NULL、VARCHAR 或 OTHER
+            JdbcType 常量，常用值：NULL、VARCHAR 或 OTHER 默认值=OTHER
+        -->
+        <setting name="jdbcTypeForNull" value="OTHER"/>
+        <!-- 指定对象的哪些方法触发一次延迟加载,用逗号分隔的方法列表, 默认值=equals,clone,hashCode,toString -->
+        <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
+        <!--指定 Enum 使用的默认 TypeHandler 。（新增于 3.4.5）一个类型别名或全限定类名-->
+        <setting name="defaultEnumTypeHandler" value="org.apache.ibatis.type.EnumTypeHandler"/>
+        <!--
+            指定当结果集中值为 null 的时候是否调用映射对象的 setter（map 对象时为 put）方法，
+            这在依赖于 Map.keySet() 或 null 值进行初始化时比较有用。
+            注意基本类型（int、boolean 等）是不能设置成 null 的
+            默认值=false
+        -->
+        <setting name="callSettersOnNulls" value="false"/>
+        <!--
+            当返回行的所有列都是空时，MyBatis默认返回 null。
+            当开启这个设置时，MyBatis会返回一个空实例。请注意，它也适用于嵌套的结果集（如集合或关联）。（新增于 3.4.2）
+            默认值=false
+        -->
+        <setting name="returnInstanceForEmptyRow" value="false"/>
+        <!--指定 MyBatis 增加到日志名称的前缀, 默认值=未设置-->
+<!--        <setting name="logPrefix" value=""/>-->
+        <!--指定 MyBatis 所用日志的具体实现，未指定时将自动查找
+            SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING
+            默认值=未设置
+        -->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+        <!--指定 Mybatis 创建可延迟加载对象所用到的代理工具, CGLIB | JAVASSIST 默认值=JAVASSIST (MyBatis 3.3 以上)-->
+        <setting name="proxyFactory" value="JAVASSIST"/>
+        <!--允许使用方法签名中的名称作为语句参数名称。
+        为了使用该特性，你的项目必须采用 Java 8 编译，并且加上 -parameters 选项。（新增于 3.4.1） 默认true-->
+        <setting name="useActualParamName" value="true"/>
+    </settings>
+
+    <!--类型别名可为 Java 类型设置一个缩写名字。 它仅用于 XML 配置，意在降低冗余的全限定类名书写-->
+    <typeAliases>
+        <typeAlias alias="blog" type="life.icetea.test.mybatis.domain.Blog"/>
+        <!--
+            也可以指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean
+            在没有注解@Alias(放在po类上来指定别名)的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名
+        -->
+        <package name="life.icetea.test.mybatis.domain"/>
+    </typeAliases>
+
+    <typeHandlers>
+        <!--
+          当配置package的时候，mybatis会去配置的package扫描TypeHandler
+          <package name="com.dy.demo"/>
+       -->
+        <!-- handler属性直接配置我们要指定的TypeHandler -->
+<!--        <typeHandler handler=""/>-->
+        <!-- javaType 配置java类型，例如String, 如果配上javaType, 那么指定的typeHandler就只作用于指定的类型 -->
+<!--        <typeHandler javaType="" handler=""/>-->
+        <!-- jdbcType 配置数据库基本数据类型，例如varchar, 如果配上jdbcType, 那么指定的typeHandler就只作用于指定的类型  -->
+<!--        <typeHandler jdbcType="" handler=""/>-->
+        <!-- 也可两者都配置 -->
+<!--        <typeHandler javaType="" jdbcType="" handler=""/>-->
+    </typeHandlers>
+
+    <!-- 配置mybatis的环境信息 -->
     <environments default="development">
         <environment id="development">
+            <!-- 配置JDBC事务控制，由mybatis进行管理 -->
             <transactionManager type="JDBC"/>
+            <!-- 配置数据源，采用dbcp连接池 -->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/icetea-demo"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
+                <property name="driver" value="${db.driver}"/>
+                <property name="url" value="${db.url}"/>
+                <property name="username" value="${db.username}"/>
+                <!-- 如果属性 'password' 没有被配置，'password' 属性的值将为 '123456' -->
+                <property name="password" value="${db.password:123456}"/>
             </dataSource>
         </environment>
     </environments>
+
     <mappers>
-<!--        <mapper class="BlogMapper"/>-->
-        <mapper resource="life/icetea/test/mybatis/demo1/BlogMapper.xml"/>
+        <!-- 使用映射器接口实现类的完全限定类名 -->
+        <mapper class="life.icetea.test.mybatis.mapper.BlogMapper"/>
+        <!-- 使用相对于类路径的资源引用 -->
+<!--        <mapper resource="mapper/BlogMapper.xml"/>-->
+        <!-- 使用完全限定资源定位符（URL） -->
+<!--        <mapper url="file:///var/mappers/AuthorMapper.xml"/>-->
+        <!-- 将包内的映射器接口实现全部注册为映射器 -->
+<!--        <package name="life.icetea.test.mybatis.mapper"/>-->
     </mappers>
+
 </configuration>
