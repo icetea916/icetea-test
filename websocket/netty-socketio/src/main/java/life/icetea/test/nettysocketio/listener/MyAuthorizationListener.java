@@ -58,7 +58,7 @@ public class MyAuthorizationListener implements AuthorizationListener {
         System.out.println("=====http request headers end======");
 
 
-        log.info("权限验证成功, token={}", data.getSingleUrlParam("token"));
+        log.info("权限验证成功, username={}", username);
         return true;
     }
 

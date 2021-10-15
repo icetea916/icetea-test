@@ -9,7 +9,7 @@ public class MyPingListener implements PingListener {
 
     @Override
     public void onPing(SocketIOClient client) {
-        log.info("heartbeat sessionId={}", client.getSessionId().toString());
+//        log.info("heartbeat sessionId={}", client.getSessionId().toString());
     }
 
 }

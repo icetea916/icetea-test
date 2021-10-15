@@ -28,6 +28,7 @@
         <module>java8-lambada</module>
         <module>test-netty</module>
         <module>test-java-nio</module>
+        <module>test-designpattern</module>
     </modules>
 
     <properties>

@@ -56,12 +56,12 @@ public class NettySocketIOConfig {
         // 例如： 心跳间隔为5s，心跳超时未2s，在收到一次心跳开始计时，应在第5s的时候收到下一次心跳，但如果没有收到，server会再等2s，如果还没有收到则会判定心跳超时，断开该客户端连接
         config.setPingTimeout(3000);
         // 心跳Ping消息间隔（毫秒），默认25秒。客户端向服务器发送一条心跳消息间隔
-        config.setPingInterval(10000);
+        config.setPingInterval(2000);
 
         // 创建socketIO server
         SocketIOServer server = new SocketIOServer(config);
         // 添加心跳监听，该方法是对所有namespace添加心跳监听，也可对单个namespace添加, 如下有例子
-        server.addPingListener(new MyPingListener());
+//        server.addPingListener(new MyPingListener());
         // 添加监听器
         server.addListeners(new MyEventListener(server));
 

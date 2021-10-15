@@ -40,16 +40,14 @@ public class MyEventListener {
     @OnConnect
     public void onConnect(SocketIOClient client) {
         HandshakeData handshakeData = client.getHandshakeData();
-        log.info("连接成功: sessionId={}", client.getSessionId());
+        String username = handshakeData.getSingleUrlParam("username");
 
-        // 根据token查询用户数据
+        // 构造用户并存储到session中
         User user = new User();
-        user.setUsername(handshakeData.getSingleUrlParam("username"));
-        user.setAge(Integer.valueOf(handshakeData.getSingleUrlParam("age")));
-        // 将user信息保存到client中
+        user.setUsername(username);
         client.set("user", user);
 
-        log.info("client nameSpaces={}, rooms={}", client.getNamespace().getName(), client.getAllRooms());
+        log.info("namespace={}连接成功: username={},sessionId={}", client.getNamespace().getName(), username, client.getSessionId());
     }
 
     /**
@@ -57,7 +55,8 @@ public class MyEventListener {
      */
     @OnDisconnect
     public void onDisconnect(SocketIOClient client) {
-        log.info("断开连接,sessionId={}", client.getSessionId());
+        User user = (User) client.get("user");
+        log.info("namespace={}断开连接: username={},sessionId={}", client.getNamespace().getName(), user.getUsername(), client.getSessionId());
     }
 
     public MyEventListener(SocketIOServer socketIOServer) {

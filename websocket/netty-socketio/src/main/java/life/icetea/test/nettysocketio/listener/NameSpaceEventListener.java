@@ -4,33 +4,36 @@ import com.corundumstudio.socketio.*;
 import com.corundumstudio.socketio.annotation.OnConnect;
 import com.corundumstudio.socketio.annotation.OnDisconnect;
 import com.corundumstudio.socketio.annotation.OnEvent;
-import life.icetea.test.nettysocketio.config.NameSpaceChatConfig;
+import life.icetea.test.nettysocketio.config.NameSpaceConfig;
 import life.icetea.test.nettysocketio.domain.Message;
 import life.icetea.test.nettysocketio.domain.User;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * chat namespace 事件监听器
+ * namespace 事件监听器
  *
  * @author icetea
  */
 @Slf4j
-public class ChatNameSpaceEventListener {
-
+public class NameSpaceEventListener {
 
     /**
      * 发送消息事件名称
      */
     private static final String EVENT_MESSAGE = "message";
-
+    /**
+     * 当前namespace在线人数
+     */
+    private static AtomicLong num = new AtomicLong(0);
     /**
      * socket io服务
      */
     private SocketIOServer server;
     /**
-     * 命名空间
+     * 命名空间对象
      */
     private SocketIONamespace namespace;
 
@@ -41,17 +44,17 @@ public class ChatNameSpaceEventListener {
     public void onConnect(SocketIOClient client) {
         HandshakeData handshakeData = client.getHandshakeData();
         String username = handshakeData.getSingleUrlParam("username");
-        String age = handshakeData.getSingleUrlParam("age");
         BroadcastOperations broadcastOperations = namespace.getBroadcastOperations();
         broadcastOperations.sendEvent(EVENT_MESSAGE, new Message<String>(new Date(), username, username + "用户已上线"));
 
         // 保存用户数据至client中
         User user = new User();
         user.setUsername(username);
-        user.setAge(Integer.valueOf(age));
         client.set("user", user);
 
-        log.info("连接成功: username={},namespace={},sessionId={}", username, client.getNamespace().getName(), client.getSessionId());
+        log.info("namespace={}连接成功: username={},sessionId={}", client.getNamespace().getName(), username, client.getSessionId());
+        num.incrementAndGet();
+        log.info("当前namespace在线人数: num={}", num);
     }
 
     /**
@@ -63,7 +66,10 @@ public class ChatNameSpaceEventListener {
         String username = handshakeData.getSingleUrlParam("username");
         BroadcastOperations broadcastOperations = namespace.getBroadcastOperations();
         broadcastOperations.sendEvent(EVENT_MESSAGE, new Message<String>(new Date(), username, username + "用户已下线"));
-        log.info("断开连接, username={},sessionId={}", username, client.getSessionId());
+
+        User user = (User) client.get("user");
+        log.info("namespace={}断开连接: username={},sessionId={}", client.getNamespace().getName(), user.getUsername(), client.getSessionId());
+        num.decrementAndGet();
     }
 
     /**
@@ -77,9 +83,9 @@ public class ChatNameSpaceEventListener {
         broadcastOperations.sendEvent(EVENT_MESSAGE, message);
     }
 
-    public ChatNameSpaceEventListener(SocketIOServer server) {
+    public NameSpaceEventListener(SocketIOServer server) {
         this.server = server;
-        this.namespace = server.getNamespace(NameSpaceChatConfig.NAME_SPACE);
+        this.namespace = server.getNamespace(NameSpaceConfig.NAME_SPACE);
     }
 
 }
