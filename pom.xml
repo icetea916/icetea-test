@@ -14,7 +14,6 @@
         <module>websocket/spring-websocket</module>
         <module>websocket/netty-socketio</module>
         <module>websocket/java-websocket</module>
-        <module>websocket/scoketio-client-2</module>
         <module>java-feature</module>
         <module>test-springAOP</module>
         <module>test-open-office</module>
@@ -29,6 +28,7 @@
         <module>test-netty</module>
         <module>test-java-nio</module>
         <module>test-designpattern</module>
+        <module>icetea-test-beanCopierUtil</module>
     </modules>
 
     <properties>
@@ -36,48 +36,6 @@
         <maven.compile.source>1.8</maven.compile.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.5.1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.73</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.7.1</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.9</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
