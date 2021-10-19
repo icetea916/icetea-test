@@ -119,12 +119,12 @@
 
     <!--类型别名可为 Java 类型设置一个缩写名字。 它仅用于 XML 配置，意在降低冗余的全限定类名书写-->
     <typeAliases>
-        <typeAlias alias="blog" type="life.icetea.test.mybatis.domain.Blog"/>
+        <typeAlias alias="blog" type="life.icetea.test.mybatis.life.icetea.test.beancopire.domain.Blog"/>
         <!--
             也可以指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean
             在没有注解@Alias(放在po类上来指定别名)的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名
         -->
-        <package name="life.icetea.test.mybatis.domain"/>
+        <package name="life.icetea.test.mybatis.life.icetea.test.beancopire.domain"/>
     </typeAliases>
 
     <typeHandlers>

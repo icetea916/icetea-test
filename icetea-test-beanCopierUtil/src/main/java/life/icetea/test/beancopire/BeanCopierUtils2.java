@@ -1,4 +1,7 @@
+package life.icetea.test.beancopire;
+
 import net.sf.cglib.beans.BeanCopier;
+import net.sf.cglib.core.Converter;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,8 +33,22 @@ public class BeanCopierUtils2 {
         String cacheKey = source.getClass().toString() + target.getClass().toString();
 
         // 查看concurrentHashMap的实现方法介绍可以得知该方法为原子方法,保证了线程安全
-        BeanCopier beanCopier = BEAN_COPIER_MAP.computeIfAbsent(cacheKey,k -> BeanCopier.create(source.getClass(), target.getClass(), false));
+        BeanCopier beanCopier = BEAN_COPIER_MAP.computeIfAbsent(cacheKey, k -> BeanCopier.create(source.getClass(), target.getClass(), false));
         beanCopier.copy(source, target, null);
+    }
+
+    /**
+     * 将source对象的属性拷贝到target对象中去
+     *
+     * @param source source对象
+     * @param target target对象
+     */
+    public static void copyProperties(Object source, Object target, Converter converter) {
+        String cacheKey = source.getClass().toString() + target.getClass().toString();
+
+        // 查看concurrentHashMap的实现方法介绍可以得知该方法为原子方法,保证了线程安全
+        BeanCopier beanCopier = BEAN_COPIER_MAP.computeIfAbsent(cacheKey, k -> BeanCopier.create(source.getClass(), target.getClass(), true));
+        beanCopier.copy(source, target, converter);
     }
 
 }

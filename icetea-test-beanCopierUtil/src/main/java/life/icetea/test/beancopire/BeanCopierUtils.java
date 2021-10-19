@@ -1,3 +1,5 @@
+package life.icetea.test.beancopire;
+
 import net.sf.cglib.beans.BeanCopier;
 
 import java.util.HashMap;

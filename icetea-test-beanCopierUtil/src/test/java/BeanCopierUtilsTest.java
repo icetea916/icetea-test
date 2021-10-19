@@ -1,5 +1,6 @@
-import domain.UserDTO;
-import domain.UserEntity;
+import life.icetea.test.beancopire.BeanCopierUtils;
+import life.icetea.test.beancopire.domain.UserDTO;
+import life.icetea.test.beancopire.domain.UserEntity;
 import org.junit.Test;
 
 /**

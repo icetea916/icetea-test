@@ -19,13 +19,8 @@
     <dependencies>
         <dependency>
             <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
+            <artifactId>cglib-nodep</artifactId>
             <version>3.2.10</version>
-        </dependency>
-        <dependency>
-            <groupId>com.esotericsoftware</groupId>
-            <artifactId>reflectasm</artifactId>
-            <version>1.11.7</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

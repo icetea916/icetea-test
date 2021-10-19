@@ -1,14 +1,13 @@
-package domain;
-
-import com.oracle.webservices.internal.api.databinding.DatabindingMode;
+package life.icetea.test.beancopire.domain;
 
 /**
  * @author icetea
  */
-public class UserEntity {
+public class UserDTO {
 
     private String name;
     private int age;
+    private AccountEntity account;
 
     public String getName() {
         return name;
@@ -26,11 +25,20 @@ public class UserEntity {
         this.age = age;
     }
 
+    public AccountEntity getAccount() {
+        return account;
+    }
+
+    public void setAccount(AccountEntity account) {
+        this.account = account;
+    }
+
     @Override
     public String toString() {
-        return "UserEntity{" +
+        return "UserDTO{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", account=" + account +
                 '}';
     }
 }

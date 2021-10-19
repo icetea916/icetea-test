@@ -1,12 +1,21 @@
-package domain;
+package life.icetea.test.beancopire.domain;
 
 /**
  * @author icetea
  */
-public class UserDTO {
+public class UserEntity {
 
     private String name;
     private int age;
+    private AccountEntity account;
+
+    public AccountEntity getAccount() {
+        return account;
+    }
+
+    public void setAccount(AccountEntity account) {
+        this.account = account;
+    }
 
     public String getName() {
         return name;
@@ -26,9 +35,10 @@ public class UserDTO {
 
     @Override
     public String toString() {
-        return "UserDTO{" +
+        return "UserEntity{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", account=" + account +
                 '}';
     }
 }
