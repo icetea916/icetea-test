@@ -29,6 +29,7 @@
         <module>test-java-nio</module>
         <module>test-designpattern</module>
         <module>icetea-test-beanCopierUtil</module>
+        <module>test-elastic-job-dangdang</module>
     </modules>
 
     <properties>
