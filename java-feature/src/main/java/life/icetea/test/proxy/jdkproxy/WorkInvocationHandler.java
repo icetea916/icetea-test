@@ -22,9 +22,6 @@ public class WorkInvocationHandler<T extends IWork> implements InvocationHandler
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("被代理类simpleName=" + target.getClass().getSimpleName());
-        System.out.println("代理类simpleName=" + proxy.getClass().getSimpleName());
-
         // before
         if ("meeting".equals(method.getName())) {
             System.out.println("代理类先准备开会材料");
@@ -37,7 +34,7 @@ public class WorkInvocationHandler<T extends IWork> implements InvocationHandler
             }
         }
 
-        // run
+        // 运行被代理类方法
         Object resultObj = method.invoke(target, args);
 
         // after
