@@ -64,8 +64,17 @@ public class ArrayCopyTest {
         System.out.println("a1==a2 : " + (a1 == a2));
         System.out.println("a2 = " + Arrays.toString(a2));
 
-        
 
+    }
+
+    @Test
+    public void test4() {
+        long a1 = 1644565997000l;
+        long a2 = 1644563890999l;
+
+        long b = a1 - a2;
+        System.out.println(b);
+        System.out.println((long)Math.ceil(b / 1000.0));
     }
 
 }

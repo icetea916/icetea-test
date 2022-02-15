@@ -31,6 +31,7 @@
         <module>icetea-test-beanCopierUtil</module>
         <module>test-elastic-job-dangdang</module>
         <module>test-thread-pool</module>
+        <module>test-bloomFilter</module>
     </modules>
 
     <properties>
