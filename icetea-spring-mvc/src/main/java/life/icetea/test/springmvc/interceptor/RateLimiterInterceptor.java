@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 限流拦截器
  */
-@Component
+//@Component
 @Slf4j
 public class RateLimiterInterceptor extends HandlerInterceptorAdapter {
 

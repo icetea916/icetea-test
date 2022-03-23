@@ -14,7 +14,7 @@ import java.util.List;
  * ip拦截器
  */
 @Slf4j
-@Component
+//@Component
 public class IpFilterInterceptor extends HandlerInterceptorAdapter {
 
     @Value("#{'${order.platform.allow.ip.list}'.split(',')}")
