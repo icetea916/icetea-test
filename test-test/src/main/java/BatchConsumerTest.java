@@ -5,6 +5,7 @@ import com.sensorsdata.analytics.javasdk.exceptions.InvalidArgumentException;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class BatchConsumerTest {
     public static void main(String[] args) throws InvalidArgumentException {
         // 从神策分析获取的数据接收的 URL
 //        final String SA_SERVER_URL = "http://172.16.0.74:8000/sensorsensor/test";
-        final String SA_SERVER_URL = "http://172.16.0.74:8000/sa?project=test_me";
+        final String SA_SERVER_URL = "http://localhost:8080/sa/icetea?token=123456";
         // 当缓存的数据量达到50条时，批量发送数据
         final int SA_BULK_SIZE = 50;
         // 数据同步失败不抛出异常
@@ -24,9 +25,12 @@ public class BatchConsumerTest {
         final int MAX_CACHE_SIZE = 0;
         // 使用 BatchConsumer 初始化 SensorsAnalytics
         // 不要在任何线上的服务中使用此 Consumer
-        final SensorsAnalytics sa = new SensorsAnalytics(new BatchConsumer(SA_SERVER_URL, SA_BULK_SIZE, MAX_CACHE_SIZE, THROW_EXCEPTION));
+        BatchConsumer batchConsumer = new BatchConsumer(SA_SERVER_URL, SA_BULK_SIZE, MAX_CACHE_SIZE, THROW_EXCEPTION);
+        final SensorsAnalytics sa = new SensorsAnalytics(batchConsumer);
 
         String distinctId = "ABCDEF123456789";
+        // 添加当前登录用户，会触发内置事件
+        sa.profileAppend(distinctId, true, new HashMap<String, Object>());
 
         // 用户的 Distinct ID
         {
@@ -61,7 +65,6 @@ public class BatchConsumerTest {
             // 记录用户订单付款事件
             sa.track(lookRecord);
         }
-
 
         sa.flush();
 
