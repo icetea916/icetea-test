@@ -1,7 +1,7 @@
-package life.icetea.test.thinkinspring.ioc.overview.dependency.lookup;
+package life.icetea.test;
 
-import life.icetea.test.thinkinspring.ioc.overview.annotation.Super;
-import life.icetea.test.thinkinspring.ioc.overview.domain.User;
+import life.icetea.test.annotation.Super;
+import life.icetea.test.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
@@ -16,12 +16,19 @@ public class DependencyLookupDemo {
 
     public static void main(String[] args) {
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("META-INF/dependency-lookup-context.xml");
-        lookupInTime(beanFactory);
-        lookupByLazy(beanFactory);
-        lookupByType(beanFactory);
-        lookupCollectionByType(beanFactory);
-        lookupByIdAndType(beanFactory);
-        lookupByAnnotation(beanFactory);
+        // 实时查找
+//        lookupInTime(beanFactory);
+        // 延时查找
+//        lookupByLazy(beanFactory);
+        equalLazyAndInTime(beanFactory);
+        // 根据类型查找
+//        lookupByType(beanFactory);
+        // 查找类型集合
+//        lookupCollectionByType(beanFactory);
+        // 根据id和class查找
+//        lookupByIdAndType(beanFactory);
+        // 根据注解查找
+//        lookupByAnnotation(beanFactory);
     }
 
     /**
@@ -87,6 +94,16 @@ public class DependencyLookupDemo {
         ObjectFactory<User> objectFactory = (ObjectFactory) beanFactory.getBean("objectFactory");
         User user = objectFactory.getObject();
         System.out.println("延迟查找: " + user);
+    }
+
+    public static void equalLazyAndInTime(BeanFactory beanFactory) {
+        User user = (User) beanFactory.getBean("user");
+        System.out.println("实时查找: " + user);
+        // objectFactory不生成新的bean, 用factoryBean查找时会生成新的bean
+        ObjectFactory<User> objectFactory = (ObjectFactory) beanFactory.getBean("objectFactory");
+        User user2 = objectFactory.getObject();
+        System.out.println("延迟查找: " + user2);
+        System.out.println("equal=" + (user == user2));
     }
 
 }

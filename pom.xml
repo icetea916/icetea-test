@@ -23,7 +23,6 @@
         <module>test-lombok</module>
         <module>rabbit-mq</module>
         <module>icetea-spring-mvc</module>
-        <module>think-in-spring</module>
         <module>java8-lambada</module>
         <module>test-netty</module>
         <module>test-java-nio</module>
@@ -34,6 +33,7 @@
         <module>test-concurrent</module>
         <module>test-spring</module>
         <module>test-test</module>
+        <module>learn-xiaomage-spring</module>
     </modules>
 
     <properties>

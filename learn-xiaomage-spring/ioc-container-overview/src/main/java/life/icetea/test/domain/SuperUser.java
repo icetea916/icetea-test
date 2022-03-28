@@ -1,6 +1,6 @@
-package life.icetea.test.thinkinspring.ioc.overview.domain;
+package life.icetea.test.domain;
 
-import life.icetea.test.thinkinspring.ioc.overview.annotation.Super;
+import life.icetea.test.annotation.Super;
 import lombok.Data;
 
 @Data

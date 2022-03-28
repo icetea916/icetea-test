@@ -1,4 +1,4 @@
-package life.icetea.test.thinkinspring.ioc.overview.annotation;
+package life.icetea.test.annotation;
 
 import java.lang.annotation.*;
 

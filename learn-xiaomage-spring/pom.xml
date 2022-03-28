@@ -9,13 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <artifactId>think-in-spring</artifactId>
+
+    <groupId>life.icetea.learn</groupId>
+    <artifactId>learn-xiaomage-spring</artifactId>
 
     <modules>
         <module>ioc-container-overview</module>
+        <module>java-beans-demo</module>
     </modules>
 
     <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <spring.version>5.2.2.RELEASE</spring.version>
     </properties>
 
