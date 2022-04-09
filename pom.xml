@@ -35,6 +35,7 @@
         <module>test-test</module>
         <module>learn-xiaomage-spring</module>
         <module>sensor-test</module>
+        <module>springCloud/test-netflix-ribbon</module>
     </modules>
 
     <properties>
