@@ -37,6 +37,7 @@
         <module>sensor-test</module>
         <module>springCloud/test-netflix-ribbon</module>
         <module>springCloud/test-feign</module>
+        <module>test-geoip</module>
     </modules>
 
     <properties>
