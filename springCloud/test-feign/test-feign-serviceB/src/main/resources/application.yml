@@ -1,0 +1,38 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: ServiceB
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+
+feign:
+  client:
+    # 普通配置
+    config:
+      # 默认配置
+      default:
+        connectTimeout: 3000
+        readTimeout: 5000
+        # 请求日志打印级别：有none，basic，headers，full，结合spirng loggin使用配置了debug级别才会显示
+        loggerLevel: full
+      # 单独给serviceA都配置
+      ServiceA:
+        connectTimeout: 5000
+        readTimeout: 10000
+        loggerLevel: full
+        decode404: false
+  # 启用feign的压缩
+  compression:
+    request:
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+
+logging:
+  level:
+    life.icetea.test.ServiceAFeignClient: debug
