@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>test-thread</module>
         <module>test-poi</module>
         <module>websocket/spring-websocket</module>
         <module>websocket/netty-socketio</module>
@@ -23,16 +22,12 @@
         <module>test-lombok</module>
         <module>rabbit-mq</module>
         <module>icetea-spring-mvc</module>
-        <module>java8-lambada</module>
         <module>test-netty</module>
-        <module>test-java-nio</module>
         <module>test-designpattern</module>
         <module>test-elastic-job-dangdang</module>
-        <module>test-thread-pool</module>
         <module>test-bloomFilter</module>
         <module>test-concurrent</module>
         <module>test-spring</module>
-        <module>test-test</module>
         <module>learn-xiaomage-spring</module>
         <module>sensor-test</module>
         <module>springCloud/test-netflix-ribbon</module>
@@ -45,6 +40,29 @@
         <maven.compile.source>1.8</maven.compile.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
