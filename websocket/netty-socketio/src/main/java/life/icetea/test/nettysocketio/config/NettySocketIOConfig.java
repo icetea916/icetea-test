@@ -65,6 +65,11 @@ public class NettySocketIOConfig {
         // 添加监听器
         server.addListeners(new MyEventListener(server));
 
+        // 添加namespace
+        SocketIONamespace chatNamespace = server.addNamespace("/chat");
+        chatNamespace.addListeners(new NameSpaceEventListener(chatNamespace));
+//        socketIONamespace.addPingListener(new MyPingListener());
+
         // 开启socket服务
         server.start();
         return server;

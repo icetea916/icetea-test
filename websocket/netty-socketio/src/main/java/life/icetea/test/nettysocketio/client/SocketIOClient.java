@@ -20,9 +20,7 @@ import java.net.URISyntaxException;
 @Slf4j
 public class SocketIOClient {
 
-    private static final String USERNAME = "icetea";
-
-    public static String url = "http://127.0.0.1:9099?username=" + USERNAME;
+    public static String url = "http://127.0.0.1:9099/chat?username=icetea";
 
     public static void main(String args[]) throws URISyntaxException, InterruptedException {
         // client连接参数设置

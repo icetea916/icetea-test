@@ -4,7 +4,6 @@ import com.corundumstudio.socketio.*;
 import com.corundumstudio.socketio.annotation.OnConnect;
 import com.corundumstudio.socketio.annotation.OnDisconnect;
 import com.corundumstudio.socketio.annotation.OnEvent;
-import life.icetea.test.nettysocketio.config.NameSpaceConfig;
 import life.icetea.test.nettysocketio.domain.Message;
 import life.icetea.test.nettysocketio.domain.User;
 import lombok.extern.slf4j.Slf4j;
@@ -28,10 +27,6 @@ public class NameSpaceEventListener {
      * 当前namespace在线人数
      */
     private static AtomicLong num = new AtomicLong(0);
-    /**
-     * socket io服务
-     */
-    private SocketIOServer server;
     /**
      * 命名空间对象
      */
@@ -73,7 +68,7 @@ public class NameSpaceEventListener {
     }
 
     /**
-     * 处理消息事
+     * 处理消息
      */
     @OnEvent(EVENT_MESSAGE)
     public void onSendMessage(SocketIOClient client, AckRequest ackRequest, Message message) {
@@ -83,9 +78,8 @@ public class NameSpaceEventListener {
         broadcastOperations.sendEvent(EVENT_MESSAGE, message);
     }
 
-    public NameSpaceEventListener(SocketIOServer server) {
-        this.server = server;
-        this.namespace = server.getNamespace(NameSpaceConfig.NAME_SPACE);
+    public NameSpaceEventListener(SocketIONamespace namespace) {
+        this.namespace = namespace;
     }
 
 }
