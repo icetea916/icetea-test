@@ -33,6 +33,7 @@
         <module>springCloud/test-netflix-ribbon</module>
         <module>springCloud/test-feign</module>
         <module>test-geoip</module>
+        <module>test-mapstruct</module>
     </modules>
 
     <properties>
