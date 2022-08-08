@@ -1,4 +1,4 @@
-package life.icetea.test.springmvc.config;
+package life.icetea.test.springmvc.advice;
 
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

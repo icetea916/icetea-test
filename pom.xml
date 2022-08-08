@@ -21,7 +21,7 @@
         <module>test-mybatis</module>
         <module>test-lombok</module>
         <module>rabbit-mq</module>
-        <module>icetea-spring-mvc</module>
+        <module>test-spring-mvc</module>
         <module>test-netty</module>
         <module>test-designpattern</module>
         <module>test-elastic-job-dangdang</module>
