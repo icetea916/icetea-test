@@ -28,13 +28,27 @@ public class BuyAspectJ {
         System.out.println("男孩女孩都买了自己喜欢的东西");
     }
 
+    /**
+     * 当方法执行完后（无论异常还是成功）都会调用
+     */
     @After("point()")
     public void buyAfter() {
         System.out.println("男孩女孩买完东西后都很高兴");
     }
 
+    /**
+     * 当方法返回成功后会调用
+     */
     @AfterReturning("point()")
     public void buyAfterReturning() {
+        System.out.println("男孩女孩买完东西后都很高兴的回家了");
+    }
+
+    /**
+     * 当方法返回异常后会调用
+     */
+    @AfterThrowing("point()")
+    public void buyAfterThrowing() {
         System.out.println("男孩女孩买完东西后都很高兴的回家了");
     }
 
