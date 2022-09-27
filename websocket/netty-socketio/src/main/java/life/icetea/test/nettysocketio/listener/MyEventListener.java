@@ -17,7 +17,7 @@ public class MyEventListener {
     private SocketIOServer socketIOServer;
 
     /**
-     * 处理消息事件
+     * 消息事件
      * <p>
      * 注意:
      * 1. 自定义参数顺序要和客户端传来的顺序,如果不一致会报错
@@ -34,7 +34,7 @@ public class MyEventListener {
     }
 
     /**
-     * 客户端连接event
+     * 客户端连接事件
      * 1. 查询用户的信息并保存至client中
      */
     @OnConnect
@@ -51,7 +51,7 @@ public class MyEventListener {
     }
 
     /**
-     * 监听客户端断开连接
+     * 客户端链接断开事件
      */
     @OnDisconnect
     public void onDisconnect(SocketIOClient client) {

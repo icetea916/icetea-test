@@ -15,7 +15,7 @@ import java.util.Map;
  * 注意：该listener只有当connect首次连接时才会触发一次验证
  * 功能：
  * 1. 认证权限,此时session还没有建立，只能通过ip，url,query参数，headers,等条件判断权限,这些都存在HandshakeData中
- * 2. init当前会员用户的数据
+ * 2. init当前一些数据
  *
  * @author icetea
  */

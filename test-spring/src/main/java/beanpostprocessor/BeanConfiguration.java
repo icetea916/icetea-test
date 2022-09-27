@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BeanConfiguration {
 
-    @Bean(initMethod = "initUser", destroyMethod = "destroyUser")
-    public User1 getUser1() {
+    @Bean(initMethod = "init", destroyMethod = "destroyUser")
+    public User1 user1() {
         return new User1();
     }
 

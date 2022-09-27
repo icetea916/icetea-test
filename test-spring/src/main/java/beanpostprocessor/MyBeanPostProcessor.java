@@ -4,12 +4,11 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
- * 定义一个前置后置处理器
+ * 定义一个BeanPostProcessor
  */
 public class MyBeanPostProcessor implements BeanPostProcessor {
 
     /**
-     *
      * @param bean
      * @param beanName
      * @return

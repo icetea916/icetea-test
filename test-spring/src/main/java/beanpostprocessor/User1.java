@@ -20,7 +20,7 @@ public class User1 implements InitializingBean, DisposableBean {
         System.out.println("调用实现InitializingBean的afterPropertiesSet方法......");
     }
 
-    public void initUser() {
+    public void init() {
         System.out.println("执行initMethod方法.....");
     }
 
