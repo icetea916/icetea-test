@@ -4,7 +4,7 @@
 
         <title>Demo Chat</title>
 
-        <link href="bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
 
 	<style>
 		body {
@@ -36,7 +36,7 @@
 		});
 
 		socket.on('chatevent', function(data) {
-			output('<span class="username-msg">' + data.userName + ':</span> ' + data.message);
+			output('<span class="username-msg">' + data.userName + ':</span> ' + data.chatMessage);
 		});
 
 		socket.on('disconnect', function() {
@@ -48,14 +48,14 @@
                 }
 
 		function sendMessage() {
-                        var message = $('#msg').val();
+                        var chatMessage = $('#msg').val();
                         $('#msg').val('');
-                        socket.emit('chatevent', {userName: userName, message: message});
+                        socket.emit('chatevent', {userName: userName, chatMessage: chatMessage});
 		}
 
-		function output(message) {
+		function output(chatMessage) {
                         var currentTime = "<span class='time'>" +  moment().format('HH:mm:ss.SSS') + "</span>";
-                        var element = $("<div>" + currentTime + " " + message + "</div>");
+                        var element = $("<div>" + currentTime + " " + chatMessage + "</div>");
 			$('#console').prepend(element);
 		}
 

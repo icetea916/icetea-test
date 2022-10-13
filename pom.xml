@@ -34,6 +34,7 @@
         <module>springCloud/test-feign</module>
         <module>test-geoip</module>
         <module>test-mapstruct</module>
+        <module>websocket/netty-socketio-v4</module>
     </modules>
 
     <properties>

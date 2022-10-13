@@ -31,7 +31,7 @@
 </head>
 
 <body>
-<button id="message">测试model消息</button>
+<button id="chatMessage">测试model消息</button>
 <div id="console" class="well"></div>
 </body>
 <script type="text/javascript">
@@ -55,17 +55,17 @@
     });
 
     // 自定义详细发送回调
-    socket.on('message', function (data) {
+    socket.on('chatMessage', function (data) {
         var element = $("<div>" + '<span class="username-msg">' + data + ' </span>' + "</div>");
         $('#console').prepend(element);
     });
 
     // 发送model消息
-    $("#message").click(function () {
+    $("#chatMessage").click(function () {
         var msg = {
             content: "测试发送消息自动转换成model类"
         };
-        socket.emit('message-model', msg);
+        socket.emit('chatMessage-model', msg);
     });
 
 </script>

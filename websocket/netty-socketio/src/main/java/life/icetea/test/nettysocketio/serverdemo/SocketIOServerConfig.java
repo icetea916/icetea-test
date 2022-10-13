@@ -1,4 +1,4 @@
-package life.icetea.test.nettysocketio.config;
+package life.icetea.test.nettysocketio.serverdemo;
 
 import com.corundumstudio.socketio.SocketConfig;
 import com.corundumstudio.socketio.SocketIONamespace;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * netty socketio config
+ * netty socketio spring config
  * <p>
  * 注： 只支持socket.io v2.x 版本
  * <p>
@@ -68,14 +68,18 @@ public class SocketIOServerConfig {
         // 创建socketIO server
         SocketIOServer server = new SocketIOServer(config);
         // 添加心跳ping Listener，该方法是对所有namespace添加心跳监听，也可对单个namespace添加, 如下有例子
-//        server.addPingListener(new MyPingListener());
+        server.addPingListener(new MyPingListener());
         // 添事件Listener
         server.addListeners(new MyEventListener(server));
 
         // 添加namespace
-        SocketIONamespace chatNamespace = server.addNamespace("/chat");
-        chatNamespace.addPingListener(new MyPingListener());
-        chatNamespace.addListeners(new NameSpaceEventListener(chatNamespace));
+        SocketIONamespace chat1Namespace = server.addNamespace("/chat1");
+//        chatNamespace.addPingListener(new MyPingListener()); 在namespace添加pingListener无效，不知
+        chat1Namespace.addListeners(new NameSpaceEventListener(chat1Namespace));
+
+        // 添加namespace
+        SocketIONamespace chat2Namespace = server.addNamespace("/chat2");
+        chat2Namespace.addListeners(new NameSpaceEventListener(chat2Namespace));
 
         // 开启socket服务
         server.start();

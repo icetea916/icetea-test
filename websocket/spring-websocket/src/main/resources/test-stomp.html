@@ -59,9 +59,9 @@
         stompClient.send("/welcome", {}, msg);
     }
 
-    function showResponse(message) {
+    function showResponse(chatMessage) {
         var response = $("#response");
-        response.html(message);
+        response.html(chatMessage);
     }
 </script>
 </body>

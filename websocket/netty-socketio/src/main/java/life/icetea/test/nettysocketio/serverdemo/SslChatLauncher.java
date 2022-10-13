@@ -1,10 +1,11 @@
-package life.icetea.test.nettysocketio.demo;
+package life.icetea.test.nettysocketio.serverdemo;
 
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.listener.DataListener;
+import life.icetea.test.nettysocketio.domain.ChatMessage;
 
 import java.io.InputStream;
 
@@ -21,18 +22,14 @@ public class SslChatLauncher {
         config.setKeyStore(stream);
 
         final SocketIOServer server = new SocketIOServer(config);
-        server.addEventListener("chatevent", ChatObject.class, new DataListener<ChatObject>() {
+        server.addEventListener("message", ChatMessage.class, new DataListener<ChatMessage>() {
             @Override
-            public void onData(SocketIOClient client, ChatObject data, AckRequest ackRequest) {
-                server.getBroadcastOperations().sendEvent("chatevent", data);
+            public void onData(SocketIOClient client, ChatMessage data, AckRequest ackRequest) {
+                server.getBroadcastOperations().sendEvent("message", data);
             }
         });
 
         server.start();
-
-        Thread.sleep(Integer.MAX_VALUE);
-
-        server.stop();
     }
 
 }
