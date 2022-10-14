@@ -3,8 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 定义一个id为user的bean对象 -->
-    <bean id="user" class="User">
+    <bean id="user" class="life.icetea.test.spring.xml.User">
         <property name="age" value="30"></property>
-        <property name="userName" value="icetea-bean-xml"></property>
+        <property name="userName" value="icetea"></property>
     </bean>
+
 </beans>

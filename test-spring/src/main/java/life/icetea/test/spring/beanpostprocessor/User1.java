@@ -1,4 +1,4 @@
-package beanpostprocessor;
+package life.icetea.test.spring.beanpostprocessor;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;

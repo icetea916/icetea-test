@@ -1,4 +1,4 @@
-package xml;
+package life.icetea.test.spring.annotation;
 
 /**
  * 定义一个用户对象bean

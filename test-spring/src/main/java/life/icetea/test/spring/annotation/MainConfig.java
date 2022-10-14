@@ -1,4 +1,4 @@
-package annotation;
+package life.icetea.test.spring.annotation;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

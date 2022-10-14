@@ -1,4 +1,4 @@
-package beanpostprocessor;
+package life.icetea.test.spring.beanpostprocessor;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
