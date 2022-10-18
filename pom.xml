@@ -35,6 +35,7 @@
         <module>test-geoip</module>
         <module>test-mapstruct</module>
         <module>websocket/netty-socketio-v4</module>
+        <module>test-guava</module>
     </modules>
 
     <properties>
