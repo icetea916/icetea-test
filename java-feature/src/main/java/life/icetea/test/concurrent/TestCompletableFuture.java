@@ -14,12 +14,13 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 /**
- * @author icetea
  * https://blog.csdn.net/sermonlizhi/article/details/123356877
+ *
+ * @author icetea
  * @date 2022-10-18 13:36
  */
 @Slf4j
-public class TestFuture {
+public class TestCompletableFuture {
 
     @Test
     public void test1() {

@@ -1,4 +1,4 @@
-package life.icetea.test.bigdecimaltest;
+package life.icetea.test.bigdecimal;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
