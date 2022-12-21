@@ -1,4 +1,4 @@
-package life.icetea.test.springredis.pojo;
+package life.icetea.test.springredis.cacheobject;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserCacheObject {
 
     private Integer id;
     private String username;

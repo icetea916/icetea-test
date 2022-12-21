@@ -1,6 +1,7 @@
 package life.icetea.test.springredis;
 
-import life.icetea.test.springredis.pojo.User;
+import life.icetea.test.springredis.cacheobject.UserCacheObject;
+import life.icetea.test.springredis.dao.UserCacheDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +12,8 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import javax.annotation.Resource;
 
 /**
  * @author icetea
@@ -24,6 +27,8 @@ public class Test01 {
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
     private RedisTemplate redisTemplate;
+    @Resource
+    private UserCacheDAO userCacheDAO;
 
     /**
      * 简单操作stringRedisTemplate
@@ -49,16 +54,16 @@ public class Test01 {
      */
     @Test
     public void testGenericJackson2JsonRedisSerializer() {
-        User user = new User();
-        user.setId(1);
-        user.setUsername("icetea");
-        user.setAge(18);
+        UserCacheObject userCacheObject = new UserCacheObject();
+        userCacheObject.setId(1);
+        userCacheObject.setUsername("icetea");
+        userCacheObject.setAge(18);
 
         redisTemplate.setKeySerializer(RedisSerializer.string());
         redisTemplate.setValueSerializer(RedisSerializer.json());
-        ValueOperations<String, User> valueOperations = redisTemplate.opsForValue();
-        String key = String.format("user:%d", user.getId());
-        valueOperations.set(key, user);
+        ValueOperations<String, UserCacheObject> valueOperations = redisTemplate.opsForValue();
+        String key = String.format("user:%d", userCacheObject.getId());
+        valueOperations.set(key, userCacheObject);
     }
 
     @Test
@@ -71,65 +76,21 @@ public class Test01 {
         System.out.println(value);
     }
 
-//    /**
-//     * 使用GenericJackson2JsonRedisSerializer序列化数据 数组
-//     */
-//    @Test
-//    public Object testGenericJackson2JsonRedisSerializerWithArray() {
-//        String key = "icetea:testgj:array";
-//        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-//        ValueOperations<String, List<User>> valueOperations = redisTemplate.opsForValue();
-//        LinkedList<User> list = new LinkedList<>();
-//        list.add(new User("icetea", 18));
-//        list.add(new User("icetea-1", 28));
-//        valueOperations.set(key, list);
-//        // get
-//        List<User> users = valueOperations.get(key);
-//        return users;
-//    }
+    @Test
+    public void testDAO01() {
+        UserCacheObject obj = new UserCacheObject();
+        obj.setId(2);
+        obj.setUsername("icetea");
+        obj.setAge(18);
 
-//    @Test
-//    public void testStringSetKey() {
-//        String key = "icetea:testobj";
-//        ValueOperations valueOperations = redisTemplate.opsForValue();
-//        LinkedHashMap<String, Object> linkedHashMap = new LinkedHashMap();
-//        linkedHashMap.put("username", "icetea");
-//        linkedHashMap.put("age", 18);
-//        // 存
-//        valueOperations.set(key, linkedHashMap);
-//
-//        // 取出来是linkedHashMap类型
-//        Object o = valueOperations.get(key);
-//        Class<?> aClass = o.getClass();
-//        log.info("classType = {}", aClass.getName());
-//    }
+        userCacheDAO.set(obj);
+        log.info("obj={}", obj);
+    }
 
-//    /**
-//     * 存字符串
-//     */
-//    @RequestMapping("create-str")
-//    public void testCreateString() {
-//        ValueOperations valueOperations = redisTemplate.opsForValue();
-//        LinkedHashMap<String, Object> linkedHashMap = new LinkedHashMap();
-//        linkedHashMap.put("username", "icetea");
-//        linkedHashMap.put("age", 18);
-//        String s = JSON.toJSONString(linkedHashMap);
-//        valueOperations.set("icetea:teststr", s);
-//
-//        // 取出来是string类型
-//        Object o = valueOperations.get("icetea:teststr");
-//        Class<?> aClass = o.getClass();
-//        log.info("classType = {}", aClass.getName());
-//    }
-//
+    @Test
+    public void testDAO() {
+        UserCacheObject userCacheObject = userCacheDAO.get(1);
+        log.info("obj={}", userCacheObject);
+    }
 
-//
-//    public static void main(String[] args) throws JsonProcessingException {
-//        ObjectMapper mapper = new ObjectMapper();
-//        LinkedHashMap<String, Object> linkedHashMap = new LinkedHashMap();
-//        linkedHashMap.put("username", "icetea");
-//        linkedHashMap.put("age", 18);
-//        byte[] bytes = mapper.writeValueAsBytes(linkedHashMap);
-//        System.out.println(new String(bytes));
-//    }
 }
