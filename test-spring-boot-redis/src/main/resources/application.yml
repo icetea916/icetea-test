@@ -1,4 +1,14 @@
 spring:
   redis:
     host: localhost
-    password: 123456
+    database: 0
+    port: 6379
+    password: 123456 # Redis 服务器密码，默认为空。生产中，一定要设置 Redis 密码！
+    timeout: 0 # Redis 连接超时时间，单位：毫秒
+    # 使用jedis连接池，需要在pom中引入jedis的依赖，因为spring-boot-data-redis默认使用lettuce作为连接池
+    client-type: JEDIS
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
