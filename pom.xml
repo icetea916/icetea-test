@@ -36,7 +36,6 @@
         <module>test-mapstruct</module>
         <module>websocket/netty-socketio-v4</module>
         <module>test-guava</module>
-        <module>test-webmagic</module>
         <module>test-jvm-book</module>
     </modules>
 
