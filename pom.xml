@@ -37,6 +37,7 @@
         <module>websocket/netty-socketio-v4</module>
         <module>test-guava</module>
         <module>test-jvm-book</module>
+        <module>test-springboot-componentScan</module>
     </modules>
 
     <properties>
