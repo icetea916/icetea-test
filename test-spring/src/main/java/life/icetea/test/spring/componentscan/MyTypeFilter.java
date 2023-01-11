@@ -1,4 +1,4 @@
-package life.icetea.test;
+package life.icetea.test.spring.componentscan;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.type.AnnotationMetadata;
