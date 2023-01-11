@@ -1,4 +1,4 @@
-package beanpostprocessor;
+package life.icetea.test.spring.beanpostprocessor;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -11,7 +11,6 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     /**
      * @param bean
      * @param beanName
-     * @return
      * @throws BeansException
      */
     public Object postProcessBeforeInitialization(Object bean, String beanName)
@@ -27,4 +26,5 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
         System.out.println("postProcessAfterInitialization====" + beanName);
         return bean;
     }
+
 }
