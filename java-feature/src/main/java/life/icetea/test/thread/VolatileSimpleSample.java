@@ -1,4 +1,4 @@
-package life.icetea.test.concurrent;
+package life.icetea.test.thread;
 
 import lombok.extern.slf4j.Slf4j;
 

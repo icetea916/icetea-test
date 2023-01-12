@@ -1,4 +1,4 @@
-package life.icetea.test.thread.pool;
+package life.icetea.test.thread.threadPool;
 
 /**
  * @author icetea
