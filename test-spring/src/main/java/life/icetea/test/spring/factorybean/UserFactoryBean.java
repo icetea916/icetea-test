@@ -14,6 +14,7 @@ public class UserFactoryBean implements FactoryBean<User> {
 
     @Override
     public User getObject() throws Exception {
+        System.out.println("====>getObject");
         return new User();
     }
 
@@ -22,9 +23,12 @@ public class UserFactoryBean implements FactoryBean<User> {
         return User.class;
     }
 
+    /**
+     * 是否单例，true则user实例只会创建一次，即getObject只会被调用一次，false则每次都会调用getObject来创建user实例
+     */
     @Override
     public boolean isSingleton() {
-        return false;
+        return true;
     }
 
 }
