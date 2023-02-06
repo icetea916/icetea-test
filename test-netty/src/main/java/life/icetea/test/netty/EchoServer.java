@@ -10,6 +10,8 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.bytes.ByteArrayEncoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 
 import java.nio.charset.Charset;
 
@@ -31,6 +33,9 @@ public class EchoServer {
             sb.group(group, bossGroup) // 绑定线程池
                     .channel(NioServerSocketChannel.class) // 指定使用的channel
                     .localAddress(this.port)// 绑定监听端口
+                    // handler中添加的Handler是对bossGroup线程组起作用
+                    .handler(new LoggingHandler(LogLevel.INFO))// netty会以给定的日志级别打印LoggingHandler中的日志，可以对入站/出站时间进行日志记录
+                    // childHandler中添加的Handler是对workerGroup
                     .childHandler(new ChannelInitializer<SocketChannel>() { // 绑定客户端连接时候触发操作
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
