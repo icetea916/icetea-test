@@ -1,4 +1,4 @@
-package life.icetea.test.elasticjob.loader;
+package life.icetea.test.elasticjob.core;
 
 import com.dangdang.ddframe.job.api.ElasticJob;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
@@ -9,7 +9,6 @@ import com.dangdang.ddframe.job.config.simple.SimpleJobConfiguration;
 import com.dangdang.ddframe.job.lite.config.LiteJobConfiguration;
 import com.dangdang.ddframe.job.lite.spring.api.SpringJobScheduler;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
-import life.icetea.test.elasticjob.listener.MyElasticJobListener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +17,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.EmbeddedValueResolverAware;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringValueResolver;
+
+import java.util.Map;
 
 /**
  * @author icetea
  */
 @Slf4j
+@Component
 public class JobLoader implements CommandLineRunner, ApplicationContextAware, EmbeddedValueResolverAware {
 
     @Autowired
@@ -33,45 +36,38 @@ public class JobLoader implements CommandLineRunner, ApplicationContextAware, Em
 
     @Override
     public void run(String... strings) throws Exception {
-//        log.info("加载job开始......");
-//        Map<String, Object> beansWithAnnotation = applicationContext.getBeansWithAnnotation(ZjtxSchedule.class);
-//        for (Map.Entry e : beansWithAnnotation.entrySet()) {
-//            if (!(e.getValue() instanceof ElasticJob)) {
-//                continue;
-//            }
-//            // 获取注解属性值
-//            ZjtxSchedule annotation = e.getValue().getClass().getAnnotation(ZjtxSchedule.class);
-//            String cron = resolver.resolveStringValue(annotation.cron());
-//            String jobName = resolver.resolveStringValue(annotation.jobName());
-//            String description = resolver.resolveStringValue(annotation.discreption());
-//            String shardingTotalCount = resolver.resolveStringValue(annotation.shardingNumber());
-//            String shardingItemParameters = resolver.resolveStringValue(annotation.shardingParams());
-//
-//            // 创建job实例
-//            initJob((ElasticJob) e.getValue(), cron, jobName, description, Integer.valueOf(shardingTotalCount), shardingItemParameters);
-//
-//        }
-//        log.info("加载job结束");
+        log.info("加载job开始......");
+        Map<String, Object> beansWithAnnotation = applicationContext.getBeansWithAnnotation(Job.class);
+        for (Map.Entry e : beansWithAnnotation.entrySet()) {
+            // 创建job core 属性
+            Job annotation = e.getValue().getClass().getAnnotation(Job.class);
+            String cron = resolver.resolveStringValue(annotation.cron());
+            String name = resolver.resolveStringValue(annotation.name());
+            String description = resolver.resolveStringValue(annotation.description());
+            String shardingItemParameters = resolver.resolveStringValue(annotation.shardingItemParameters());
+            JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration
+                    .newBuilder(name, cron, annotation.shardingTotalCount())
+                    .shardingItemParameters(shardingItemParameters)
+                    .description(description)
+                    .failover(true)
+                    .misfire(false)
+                    .build();
+
+            // 创建job实例
+            initJob((ElasticJob) e.getValue(), jobCoreConfiguration);
+        }
+        log.info("加载job结束");
     }
 
     /**
      * 初始化job
      */
-    private void initJob(ElasticJob job, String cron, String jobName, String description, Integer shardingTotalCount, String shardingItemParameters) {
-        MyElasticJobListener jobListener = new MyElasticJobListener();
-
-        JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration
-                .newBuilder(jobName, cron, shardingTotalCount)
-                .shardingItemParameters(shardingItemParameters)
-                .description(description)
-                .failover(true)
-                .misfire(false)
-                .build();
-
+    private void initJob(ElasticJob job, JobCoreConfiguration jobCoreConfiguration) {
         JobTypeConfiguration jobTypeConfiguration = null;
         if (job instanceof SimpleJob) {
             // 简单类型job
             jobTypeConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, job.getClass().getCanonicalName());
+            jobCoreConfiguration.getJobProperties();
         } else {
             // 数据流类型job
             jobTypeConfiguration = new DataflowJobConfiguration(jobCoreConfiguration, job.getClass().getCanonicalName(), true);
@@ -80,15 +76,16 @@ public class JobLoader implements CommandLineRunner, ApplicationContextAware, Em
         LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(jobTypeConfiguration)
                 .overwrite(true)
                 .build();
-        new SpringJobScheduler(job, regCenter, liteJobConfiguration, jobListener)
+
+        new SpringJobScheduler(job, regCenter, liteJobConfiguration, new MyElasticJobListener())
                 .init();
 
         log.info("\n加载定时任务完成......\n"
-                + "名称: " + jobName + "\n"
-                + "描述: " + description + "\n"
-                + "cron表达式: " + cron + "\n"
-                + "分片总数量: " + shardingTotalCount + "\n"
-                + "分片参数: " + shardingItemParameters + "\n"
+                + "名称: " + jobCoreConfiguration.getJobName() + "\n"
+                + "描述: " + jobCoreConfiguration.getDescription() + "\n"
+                + "cron表达式: " + jobCoreConfiguration.getCron() + "\n"
+                + "分片总数量: " + jobCoreConfiguration.getShardingTotalCount() + "\n"
+                + "分片参数: " + jobCoreConfiguration.getShardingItemParameters() + "\n"
         );
     }
 

@@ -4,13 +4,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * elastic-job-dangdang test application
  * @author icetea
  */
 @SpringBootApplication
-public class TestElasticJobApplication {
+public class TestElasticJobDDApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TestElasticJobApplication.class);
+        SpringApplication.run(TestElasticJobDDApplication.class);
     }
 
 }
