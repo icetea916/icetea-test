@@ -32,11 +32,30 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
     }
 
 
+//    /**
+//     * 授权模式-用户名密码模式
+//     * @param clients the client details configurer
+//     * @throws Exception
+//     */
+//    @Override
+//    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+//        clients.inMemory()
+//                .withClient("clientapp").secret("112233") // Client 账号、密码。
+//                .authorizedGrantTypes("password") // 密码模式
+//                .scopes("read_userinfo", "read_contacts") // 可授权的 Scope
+////                .and().withClient() // 可以继续配置新的 Client
+//        ;
+//    }
+
+    /**
+     * 授权模式-授权码模式
+     */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient("clientapp").secret("112233") // Client 账号、密码。
-                .authorizedGrantTypes("password") // 密码模式
+                .authorizedGrantTypes("authorization_code")
+                .redirectUris("http://localhost:9090/callback") // 配置回调地址，选填。
                 .scopes("read_userinfo", "read_contacts") // 可授权的 Scope
 //                .and().withClient() // 可以继续配置新的 Client
         ;
