@@ -38,6 +38,7 @@
         <module>oauth2-test/authorization-server-password-credentials</module>
         <module>oauth2-test/resource-server</module>
         <module>springCloud/nacos-config-demo</module>
+        <module>springCloud/test-sentinel</module>
     </modules>
 
     <properties>
