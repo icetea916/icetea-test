@@ -1,0 +1,1633 @@
+[2023-06-12 08:38:25.544] [INFO ] [main] [com.aliyun.dts.subscribe.clients.AbstractDTSConsumer:67] - register record listener mysqlRecordPrinter
+[2023-06-12 08:38:25.655] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.util.NodeCommandClientConfig:223] - NodeCommandClientConfig values: 
+	bootstrap.servers = [dts-cn-beijing.aliyuncs.com:18001]
+	client.id = 
+	connections.max.idle.ms = 540000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	poll.ms = 5000
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	reconnect_back_off_time = 1000
+	request.timeout.ms = 400000
+	retry.backoff.ms = 100
+	security.protocol = SASL_PLAINTEXT
+	send.buffer.bytes = 131072
+
+[2023-06-12 08:38:25.677] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.util.NodeCommandClient$CommandClientConfig:223] - CommandClientConfig values: 
+	bootstrap.servers = [dts-cn-beijing.aliyuncs.com:18001]
+	client.id = 
+	connections.max.idle.ms = 540000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	poll.ms = 5000
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	reconnect_back_off_time = 1000
+	request.timeout.ms = 400000
+	retry.backoff.ms = 100
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = PLAIN
+	security.protocol = SASL_PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+[2023-06-12 08:38:36.752] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.SubscribeAuthChecker:65] - Real broker node : 39.97.140.167:18001 (id: 1 rack: null)
+[2023-06-12 08:38:36.793] [INFO ] [main] [com.aliyun.dts.subscribe.clients.AbstractDTSConsumer:84] - CheckResult{isOk=true, errMsg='null'}
+[2023-06-12 08:38:36.803] [INFO ] [main] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore localCheckpointStore-dtss49o6u7712y2324
+[2023-06-12 08:38:36.803] [INFO ] [main] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore userCheckpointStore
+[2023-06-12 08:38:36.803] [INFO ] [main] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:82] - RecordGenerator: try time [150], try backTimeMS [10000]
+[2023-06-12 08:38:37.110] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore kafkaCheckpointStore
+[2023-06-12 08:38:37.111] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:210] - Firstly, try load checkpoint from user defined shared store: null
+[2023-06-12 08:38:37.112] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:215] - User defined shared store checkpoint is null, try load checkpoint from local: null
+[2023-06-12 08:38:37.536] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:40] - Cluster updated to n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 08:38:42.755] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 08:38:42.842] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:220] - User defined shared store checkpoint and local checkpoint is null, try load checkpoint from DStore: null
+[2023-06-12 08:38:42.843] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:165] - RecordGenerator: use initial checkpoint [Checkpoint[ topicPartition: nulltimestamp: 1686289518, offset: -1, info: ]] to start
+[2023-06-12 08:38:42.845] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:197] - RecordGenerator:first start, checkpoint Checkpoint[ topicPartition: nulltimestamp: 1686289518, offset: -1, info: ]
+[2023-06-12 08:38:42.847] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:97] - RecordFetcher consumer: partition revoked for []
+[2023-06-12 08:38:42.862] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 08:38:45.909] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:102] - RecordFetcher consumer: partition assigned for [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0]
+[2023-06-12 08:38:45.910] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:230] - Firstly, try load checkpoint from user defined shared store: null
+[2023-06-12 08:38:45.930] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:234] - User defined shared store checkpoint is null, try load checkpoint from DStore: null
+[2023-06-12 08:38:45.930] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:177] - Subscribe checkpoint is null, use initialCheckpoint: Checkpoint[ topicPartition: nulltimestamp: 1686289518, offset: -1, info: ]
+[2023-06-12 08:38:45.945] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:74] - RecordFetcher: seek for cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0 with checkpoint Checkpoint[ topicPartition: nulltimestamp: 1686289518, offset: -1, info: ]
+[2023-06-12 08:38:45.945] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:113] - RecordFetcher consumer:  subscribe for [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0] with checkpoint [Checkpoint[ topicPartition: nulltimestamp: 1686289518, offset: -1, info: ]] first start
+[2023-06-12 08:38:46.771] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [2574]
+RecordTimestamp [1686289667] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [2]
+Field [name] [test2]
+]}
+After image {[Field [id] [2]
+Field [name] [icetea]
+]}
+
+[2023-06-12 08:38:47.930] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [43945]
+RecordTimestamp [1686291925] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [2]
+Field [name] [icetea]
+]}
+After image {[Field [id] [2]
+Field [name] [icetea123]
+]}
+
+[2023-06-12 08:38:47.998] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [49478]
+RecordTimestamp [1686292224] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [1]
+Field [name] [test]
+]}
+After image {[Field [id] [1]
+Field [name] [test123]
+]}
+
+[2023-06-12 08:38:49.084] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [91133]
+RecordTimestamp [1686294481] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [2]
+Field [name] [icetea123]
+]}
+After image {[Field [id] [2]
+Field [name] [icetea121231233]
+]}
+
+[2023-06-12 08:38:49.281] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [92344]
+RecordTimestamp [1686294553] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='new_zjtx_biz_db', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `new_zjtx_biz_db`.`icetea_dts_test` 
+MODIFY COLUMN `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `id`]
+]}
+
+[2023-06-12 08:38:50.395] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [142903]
+RecordTimestamp [1686297309] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [INSERT]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [id] [3]
+Field [name] [icetea123]
+]}
+
+[2023-06-12 08:38:51.267] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [172653]
+RecordTimestamp [1686298935] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [INSERT]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [id] [4]
+Field [name] [123]
+]}
+
+[2023-06-12 08:38:51.275] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [173584]
+RecordTimestamp [1686298984] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+ADD COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '财务是否拒绝，0未拒绝，1是拒绝' AFTER `year`]
+]}
+
+[2023-06-12 08:38:52.857] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [227883]
+RecordTimestamp [1686302013] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+MODIFY COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '财务是否拒绝，0未拒绝，1是拒绝1' AFTER `year`]
+]}
+
+[2023-06-12 08:38:53.128] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [235058]
+RecordTimestamp [1686302421] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zjtx_20200704_test', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [CREATE TABLE `zjtx_20200704_test`.`zj_order_refund`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `order_no` varchar(64) NOT NULL COMMENT '订单编号',
+  `uid` int(0) NULL COMMENT '个人订单,存在用户id',
+  `refund_order_no` varchar(64) NOT NULL COMMENT '退款单号',
+  `store_id` int(0) NOT NULL COMMENT '店铺ID',
+  `thrid_refund_order_no` int(0) NULL COMMENT '三方支付退款单号',
+  `refund_type` tinyint NOT NULL COMMENT '退款类型, 1 部分退 ; 2 整单退;',
+  `third_id` int(0) NOT NULL COMMENT '如果是计划，type=2 关联计划id,type=1 关联课程id',
+  `refund_amount` decimal(10, 2) NOT NULL COMMENT '退款金额',
+  `refund_count` int NOT NULL COMMENT '退款子订单数量',
+  `plan_name` varchar(255) NULL COMMENT '如果是计划则为计划名称',
+  `type` tinyint NOT NULL COMMENT '退款单类型（1点播课，2计划，3直播课）',
+  `order_pay_amount` decimal(10, 2) NOT NULL COMMENT '订单支付金额',
+  `refund_path` tinyint NOT NULL COMMENT '退款方式: 1 原路退回',
+  `create_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0) COMMENT '创建时间',
+  `create_by` varchar(50) NOT NULL COMMENT '创建人',
+  PRIMARY KEY (`id`)
+) COMMENT = '订单退款表']
+]}
+
+[2023-06-12 08:38:53.549] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [256683]
+RecordTimestamp [1686303635] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [INSERT]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [id] [5]
+Field [name] [1232323]
+]}
+
+[2023-06-12 08:38:53.556] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [257321]
+RecordTimestamp [1686303672] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+MODIFY COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '财务是否拒绝，0未拒绝，1是拒绝' AFTER `year`]
+]}
+
+[2023-06-12 08:38:53.874] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [268573]
+RecordTimestamp [1686304316] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [5]
+Field [name] [1232323]
+]}
+After image {[Field [id] [5]
+Field [name] [iceatae]
+]}
+
+[2023-06-12 08:38:53.875] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [268870]
+RecordTimestamp [1686304324] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+MODIFY COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '财务是否拒绝，0未拒绝，1是拒绝1' AFTER `year`]
+]}
+
+[2023-06-12 08:39:06.709] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [741765]
+RecordTimestamp [1686331147] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='prorate_db_2022_test', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [truncate table biz_sharing]
+]}
+
+[2023-06-12 08:39:07.301] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [761556]
+RecordTimestamp [1686332269] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='prorate_db_2022_test', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [truncate table biz_sharing]
+]}
+
+[2023-06-12 08:39:07.898] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [781430]
+RecordTimestamp [1686333388] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='prorate_db_2022_test', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [truncate table biz_sharing]
+]}
+
+[2023-06-12 08:39:11.816] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [912329]
+RecordTimestamp [1686340800] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='data_resource', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [TRUNCATE table c_contract_file]
+]}
+
+[2023-06-12 08:39:54.260] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [2463494]
+RecordTimestamp [1686427200] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='data_resource', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [TRUNCATE table c_contract_file]
+]}
+
+[2023-06-12 08:40:46.512] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4129640]
+RecordTimestamp [1686513600] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='data_resource', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [TRUNCATE table c_contract_file]
+]}
+
+[2023-06-12 08:43:43.055] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 08:47:43.052] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 08:52:43.061] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 08:57:43.579] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 08:59:29.001] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 08:59:29.038] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 08:59:36.178] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 08:59:36.204] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 08:59:43.494] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 08:59:43.531] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 08:59:50.810] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 08:59:50.840] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 08:59:57.990] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 08:59:58.029] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:00:28.524] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:00:28.590] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:00:34.294] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:00:34.376] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:00:39.970] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:00:40.033] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:00:40.908] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 09:00:43.938] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:97] - RecordFetcher consumer: partition revoked for [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0]
+[2023-06-12 09:00:46.993] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:102] - RecordFetcher consumer: partition assigned for [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0]
+[2023-06-12 09:00:46.993] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:115] - RecordFetcher consumer:  subscribe for [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0]  reassign, do nothing
+[2023-06-12 09:00:47.286] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4129640]
+RecordTimestamp [1686513600] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='data_resource', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [TRUNCATE table c_contract_file]
+]}
+
+[2023-06-12 09:05:41.261] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 09:45:05.502] [INFO ] [main] [com.aliyun.dts.subscribe.clients.AbstractDTSConsumer:67] - register record listener mysqlRecordPrinter
+[2023-06-12 09:45:05.651] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.util.NodeCommandClientConfig:223] - NodeCommandClientConfig values: 
+	bootstrap.servers = [dts-cn-beijing.aliyuncs.com:18001]
+	client.id = 
+	connections.max.idle.ms = 540000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	poll.ms = 5000
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	reconnect_back_off_time = 1000
+	request.timeout.ms = 400000
+	retry.backoff.ms = 100
+	security.protocol = SASL_PLAINTEXT
+	send.buffer.bytes = 131072
+
+[2023-06-12 09:45:05.664] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.util.NodeCommandClient$CommandClientConfig:223] - CommandClientConfig values: 
+	bootstrap.servers = [dts-cn-beijing.aliyuncs.com:18001]
+	client.id = 
+	connections.max.idle.ms = 540000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	poll.ms = 5000
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	reconnect_back_off_time = 1000
+	request.timeout.ms = 400000
+	retry.backoff.ms = 100
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = PLAIN
+	security.protocol = SASL_PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+[2023-06-12 09:45:16.706] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.SubscribeAuthChecker:65] - Real broker node : 39.97.140.167:18001 (id: 1 rack: null)
+[2023-06-12 09:45:16.773] [INFO ] [main] [com.aliyun.dts.subscribe.clients.AbstractDTSConsumer:84] - CheckResult{isOk=true, errMsg='null'}
+[2023-06-12 09:45:16.783] [INFO ] [main] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore localCheckpointStore-dtss49o6u7712y2324
+[2023-06-12 09:45:16.784] [INFO ] [main] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore userCheckpointStore
+[2023-06-12 09:45:16.784] [INFO ] [main] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:82] - RecordGenerator: try time [150], try backTimeMS [10000]
+[2023-06-12 09:45:17.072] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore kafkaCheckpointStore
+[2023-06-12 09:45:17.072] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:210] - Firstly, try load checkpoint from user defined shared store: null
+[2023-06-12 09:45:17.099] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:215] - User defined shared store checkpoint is null, try load checkpoint from local: Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686513600, offset: 4129640, info: ]
+[2023-06-12 09:45:17.099] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:167] - RecordGenerator: load checkpoint from checkpoint store success, current checkpoint [Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686513600, offset: 4129640, info: ]]
+[2023-06-12 09:45:17.100] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:197] - RecordGenerator:first start, checkpoint Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686513600, offset: 4129640, info: ]
+[2023-06-12 09:45:17.498] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:40] - Cluster updated to n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 09:45:22.700] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 09:45:22.719] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:97] - RecordFetcher consumer: partition revoked for []
+[2023-06-12 09:45:25.806] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:102] - RecordFetcher consumer: partition assigned for [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0]
+[2023-06-12 09:45:25.806] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:230] - Firstly, try load checkpoint from user defined shared store: null
+[2023-06-12 09:45:25.820] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:234] - User defined shared store checkpoint is null, try load checkpoint from DStore: Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686513600, offset: 4129640, info: 1686513600]
+[2023-06-12 09:45:25.874] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:74] - RecordFetcher: seek for cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0 with checkpoint Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686513600, offset: 4129640, info: 1686513600]
+[2023-06-12 09:45:25.875] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:113] - RecordFetcher consumer:  subscribe for [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0] with checkpoint [Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686513600, offset: 4129640, info: 1686513600]] first start
+[2023-06-12 09:45:26.596] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4129640]
+RecordTimestamp [1686513600] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='data_resource', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [TRUNCATE table c_contract_file]
+]}
+
+[2023-06-12 09:45:38.041] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4508678]
+RecordTimestamp [1686533117] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+MODIFY COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '是否是来自订单结算的数据，0不是，1是' AFTER `year`]
+]}
+
+[2023-06-12 09:45:38.064] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4510796]
+RecordTimestamp [1686533236] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+ADD COLUMN `invoice_resource` tinyint(2) NULL DEFAULT 0 COMMENT '是否是来自订单结算的数据，0不是，1是' AFTER `is_finance_refuse`]
+]}
+
+[2023-06-12 09:46:08.216] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4531038]
+RecordTimestamp [1686534368] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [5]
+Field [name] [iceatae]
+]}
+After image {[Field [id] [5]
+Field [name] [iceatae1234123]
+]}
+
+[2023-06-12 09:50:23.025] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 09:51:16.039] [WARN ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:121] - KafkaRecordFetcher: error meet cause Not authorized to access topics: [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2], recover time [1]
+org.apache.kafka.common.errors.TopicAuthorizationException: Not authorized to access topics: [cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2]
+[2023-06-12 09:51:21.780] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:51:21.787] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:51:26.115] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore kafkaCheckpointStore
+[2023-06-12 09:51:26.116] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:210] - Firstly, try load checkpoint from user defined shared store: null
+[2023-06-12 09:51:26.116] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:215] - User defined shared store checkpoint is null, try load checkpoint from local: Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686534368, offset: 4531038, info: ]
+[2023-06-12 09:51:26.116] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:167] - RecordGenerator: load checkpoint from checkpoint store success, current checkpoint [Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686534368, offset: 4531038, info: ]]
+[2023-06-12 09:51:26.116] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:197] - RecordGenerator:reconnect, checkpoint Checkpoint[ topicPartition: cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0timestamp: 1686534368, offset: 4531038, info: ]
+[2023-06-12 09:51:27.508] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:51:27.508] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:51:33.276] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:51:33.287] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:51:39.080] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:51:39.080] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:51:44.810] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:51:44.816] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:51:50.592] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:51:50.597] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:51:56.409] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:51:56.409] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:02.201] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:02.202] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:08.007] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:08.018] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:13.812] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:13.829] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:19.622] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:19.646] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:25.433] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:25.462] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:31.221] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:31.255] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:37.043] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:37.072] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:42.848] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:42.883] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:48.648] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:48.677] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:52:54.412] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:52:54.458] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:00.421] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:00.464] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:06.233] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:06.286] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:12.051] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:12.091] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:17.770] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:17.804] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:23.599] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:23.645] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:29.323] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:29.373] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:35.027] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:35.077] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:40.757] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:40.805] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:46.504] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:46.531] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:52.252] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:52.261] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:53:57.948] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:53:57.948] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:03.619] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:03.633] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:09.343] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:09.349] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:15.025] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:15.030] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:20.750] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:20.750] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:26.528] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:26.537] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:32.220] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:32.244] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:37.849] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:37.865] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:43.464] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:43.503] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:49.192] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:49.212] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:54:54.871] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:54:54.883] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:00.545] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:00.547] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:06.296] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:06.313] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:12.030] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:12.072] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:17.755] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:17.796] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:23.484] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:23.519] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:29.113] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:29.143] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:34.829] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:34.851] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:40.561] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:40.579] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:46.297] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:46.319] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:52.020] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:52.060] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:55:57.745] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:55:57.798] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:03.475] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:03.515] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:09.193] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:09.233] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:14.929] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:14.969] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:20.658] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:20.681] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:26.405] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:26.434] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:32.135] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:32.169] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:37.864] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:37.886] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:43.547] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:43.587] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:49.282] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:49.347] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:56:55.000] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:56:55.086] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:00.735] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:00.805] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:06.471] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:06.523] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:12.200] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:12.270] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:17.906] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:17.994] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:23.611] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:23.729] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:29.322] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:29.453] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:35.048] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:35.170] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:40.765] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:40.906] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:46.502] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:46.654] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:52.242] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:52.394] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:57:57.967] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:57:58.122] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:03.656] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:03.841] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:09.395] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:09.571] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:15.127] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:15.306] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:20.856] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:21.035] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:26.585] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:26.748] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:32.321] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:32.489] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:38.065] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:38.221] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:43.809] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:43.930] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:49.530] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:49.660] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:58:55.233] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:58:55.338] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:00.892] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:01.009] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:06.628] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:06.733] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:12.340] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:12.439] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:18.082] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:18.169] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:23.806] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:23.887] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:29.547] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:29.628] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:35.288] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:35.340] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:41.016] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:41.066] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:46.665] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:46.720] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:52.315] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:52.366] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 09:59:57.954] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 09:59:58.000] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:03.578] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:03.619] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:09.249] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:09.282] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:14.893] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:14.919] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:20.596] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:20.608] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:26.196] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:26.197] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:31.827] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:31.838] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:37.509] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:37.509] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:43.220] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:43.241] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:48.844] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:48.848] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:00:54.508] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:00:54.526] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:00.188] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:00.221] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:05.840] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:05.863] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:11.567] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:11.573] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:17.279] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:17.285] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:22.963] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:22.968] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:28.646] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:28.668] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:34.339] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:34.342] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:40.019] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:40.034] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:45.708] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:45.726] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:51.398] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:51.419] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:01:57.048] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:01:57.074] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:02.642] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:02.665] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:08.256] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:08.267] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:13.919] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:13.923] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:19.552] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:19.591] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:25.240] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:25.264] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:30.912] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:30.935] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:36.612] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:36.624] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:42.302] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:42.319] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:48.000] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:48.047] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:53.720] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:53.759] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:02:59.438] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:02:59.490] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:05.152] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:05.226] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:10.886] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:10.952] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:16.631] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:16.685] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:22.353] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:22.408] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:28.024] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:28.079] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:33.692] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:33.727] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:39.369] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:39.376] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:45.030] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:45.052] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:50.661] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:50.695] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:03:56.329] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:03:56.382] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:02.020] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:02.076] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:07.709] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:07.776] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:13.438] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:13.494] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:19.175] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:19.242] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:24.914] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:24.956] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:30.617] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:30.680] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:36.321] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:36.387] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:42.034] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:42.087] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:47.681] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:47.720] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:53.347] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:53.369] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:04:59.054] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:04:59.078] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:04.701] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:04.754] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:10.329] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:10.393] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:15.977] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:16.057] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:21.627] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:21.710] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:27.284] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:27.371] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:32.939] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:33.001] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:38.605] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:38.669] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:44.282] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:44.342] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:49.971] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:50.027] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:05:55.670] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:05:55.726] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:01.355] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:01.394] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:07.011] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:07.044] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:12.681] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:12.720] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:18.325] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:18.347] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:24.092] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:24.126] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:29.774] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:29.796] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:35.391] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:35.410] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:41.054] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:41.068] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:46.736] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:46.750] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:52.396] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:52.433] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:06:58.048] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:06:58.090] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:03.711] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:03.757] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:09.361] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:09.401] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:15.029] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:15.080] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:20.767] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:20.809] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:26.444] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:26.476] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:26.505] [INFO ] [main] [com.aliyun.dts.subscribe.clients.AbstractDTSConsumer:67] - register record listener mysqlRecordPrinter
+[2023-06-12 10:07:26.581] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.util.NodeCommandClientConfig:223] - NodeCommandClientConfig values: 
+	bootstrap.servers = [dts-cn-beijing.aliyuncs.com:18001]
+	client.id = 
+	connections.max.idle.ms = 540000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	poll.ms = 5000
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	reconnect_back_off_time = 1000
+	request.timeout.ms = 400000
+	retry.backoff.ms = 100
+	security.protocol = SASL_PLAINTEXT
+	send.buffer.bytes = 131072
+
+[2023-06-12 10:07:26.590] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.util.NodeCommandClient$CommandClientConfig:223] - CommandClientConfig values: 
+	bootstrap.servers = [dts-cn-beijing.aliyuncs.com:18001]
+	client.id = 
+	connections.max.idle.ms = 540000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	poll.ms = 5000
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	reconnect_back_off_time = 1000
+	request.timeout.ms = 400000
+	retry.backoff.ms = 100
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = PLAIN
+	security.protocol = SASL_PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+[2023-06-12 10:07:32.150] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:32.185] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:37.455] [INFO ] [main] [com.aliyun.dts.subscribe.clients.check.SubscribeAuthChecker:65] - Real broker node : 39.97.140.167:18001 (id: 1 rack: null)
+[2023-06-12 10:07:37.513] [INFO ] [main] [com.aliyun.dts.subscribe.clients.AbstractDTSConsumer:84] - CheckResult{isOk=true, errMsg='null'}
+[2023-06-12 10:07:37.520] [INFO ] [main] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore localCheckpointStore-dtsck0i6t5a123f7iy
+[2023-06-12 10:07:37.520] [INFO ] [main] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore userCheckpointStore
+[2023-06-12 10:07:37.520] [INFO ] [main] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:82] - RecordGenerator: try time [150], try backTimeMS [10000]
+[2023-06-12 10:07:37.784] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.metastore.MetaStoreCenter:19] - MetaStoreCenter: register metaStore kafkaCheckpointStore
+[2023-06-12 10:07:37.784] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:159] - RecordGenerator: force use initial checkpoint [null] to start
+[2023-06-12 10:07:37.787] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:86] - RecordGenerator:  assigned for cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0 with checkpoint Checkpoint[ topicPartition: nulltimestamp: 1686289518, offset: -1, info: ]
+[2023-06-12 10:07:37.940] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:37.987] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:38.220] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:40] - Cluster updated to n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 10:07:38.512] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 10:07:38.514] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ConsumerWrap:74] - RecordFetcher: seek for cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2-0 with checkpoint Checkpoint[ topicPartition: nulltimestamp: 1686289518, offset: -1, info: ]
+[2023-06-12 10:07:38.515] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher:197] - RecordGenerator:first start, checkpoint Checkpoint[ topicPartition: nulltimestamp: 1686289518, offset: -1, info: ]
+[2023-06-12 10:07:39.322] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [2574]
+RecordTimestamp [1686289667] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [2]
+Field [name] [test2]
+]}
+After image {[Field [id] [2]
+Field [name] [icetea]
+]}
+
+[2023-06-12 10:07:40.638] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [43945]
+RecordTimestamp [1686291925] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [2]
+Field [name] [icetea]
+]}
+After image {[Field [id] [2]
+Field [name] [icetea123]
+]}
+
+[2023-06-12 10:07:40.706] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [49478]
+RecordTimestamp [1686292224] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [1]
+Field [name] [test]
+]}
+After image {[Field [id] [1]
+Field [name] [test123]
+]}
+
+[2023-06-12 10:07:41.984] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [91133]
+RecordTimestamp [1686294481] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [2]
+Field [name] [icetea123]
+]}
+After image {[Field [id] [2]
+Field [name] [icetea121231233]
+]}
+
+[2023-06-12 10:07:42.231] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [92344]
+RecordTimestamp [1686294553] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='new_zjtx_biz_db', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `new_zjtx_biz_db`.`icetea_dts_test` 
+MODIFY COLUMN `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `id`]
+]}
+
+[2023-06-12 10:07:43.500] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [142903]
+RecordTimestamp [1686297309] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [INSERT]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [id] [3]
+Field [name] [icetea123]
+]}
+
+[2023-06-12 10:07:43.614] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:43.653] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:44.545] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [172653]
+RecordTimestamp [1686298935] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [INSERT]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [id] [4]
+Field [name] [123]
+]}
+
+[2023-06-12 10:07:44.557] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [173584]
+RecordTimestamp [1686298984] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+ADD COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '财务是否拒绝，0未拒绝，1是拒绝' AFTER `year`]
+]}
+
+[2023-06-12 10:07:46.100] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [227883]
+RecordTimestamp [1686302013] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+MODIFY COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '财务是否拒绝，0未拒绝，1是拒绝1' AFTER `year`]
+]}
+
+[2023-06-12 10:07:46.396] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [235058]
+RecordTimestamp [1686302421] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zjtx_20200704_test', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [CREATE TABLE `zjtx_20200704_test`.`zj_order_refund`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `order_no` varchar(64) NOT NULL COMMENT '订单编号',
+  `uid` int(0) NULL COMMENT '个人订单,存在用户id',
+  `refund_order_no` varchar(64) NOT NULL COMMENT '退款单号',
+  `store_id` int(0) NOT NULL COMMENT '店铺ID',
+  `thrid_refund_order_no` int(0) NULL COMMENT '三方支付退款单号',
+  `refund_type` tinyint NOT NULL COMMENT '退款类型, 1 部分退 ; 2 整单退;',
+  `third_id` int(0) NOT NULL COMMENT '如果是计划，type=2 关联计划id,type=1 关联课程id',
+  `refund_amount` decimal(10, 2) NOT NULL COMMENT '退款金额',
+  `refund_count` int NOT NULL COMMENT '退款子订单数量',
+  `plan_name` varchar(255) NULL COMMENT '如果是计划则为计划名称',
+  `type` tinyint NOT NULL COMMENT '退款单类型（1点播课，2计划，3直播课）',
+  `order_pay_amount` decimal(10, 2) NOT NULL COMMENT '订单支付金额',
+  `refund_path` tinyint NOT NULL COMMENT '退款方式: 1 原路退回',
+  `create_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0) COMMENT '创建时间',
+  `create_by` varchar(50) NOT NULL COMMENT '创建人',
+  PRIMARY KEY (`id`)
+) COMMENT = '订单退款表']
+]}
+
+[2023-06-12 10:07:46.855] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [256683]
+RecordTimestamp [1686303635] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [INSERT]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [id] [5]
+Field [name] [1232323]
+]}
+
+[2023-06-12 10:07:46.862] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [257321]
+RecordTimestamp [1686303672] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+MODIFY COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '财务是否拒绝，0未拒绝，1是拒绝' AFTER `year`]
+]}
+
+[2023-06-12 10:07:47.198] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [268573]
+RecordTimestamp [1686304316] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [5]
+Field [name] [1232323]
+]}
+After image {[Field [id] [5]
+Field [name] [iceatae]
+]}
+
+[2023-06-12 10:07:47.199] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [268870]
+RecordTimestamp [1686304324] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+MODIFY COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '财务是否拒绝，0未拒绝，1是拒绝1' AFTER `year`]
+]}
+
+[2023-06-12 10:07:49.287] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:49.322] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:07:54.927] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:07:54.971] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:00.479] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:00.548] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:00.972] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [741765]
+RecordTimestamp [1686331147] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='prorate_db_2022_test', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [truncate table biz_sharing]
+]}
+
+[2023-06-12 10:08:01.814] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [761556]
+RecordTimestamp [1686332269] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='prorate_db_2022_test', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [truncate table biz_sharing]
+]}
+
+[2023-06-12 10:08:02.558] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [781430]
+RecordTimestamp [1686333388] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='prorate_db_2022_test', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [truncate table biz_sharing]
+]}
+
+[2023-06-12 10:08:06.007] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:06.078] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:06.393] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [912329]
+RecordTimestamp [1686340800] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='data_resource', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [TRUNCATE table c_contract_file]
+]}
+
+[2023-06-12 10:08:11.625] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:11.717] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:17.253] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:17.366] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:22.869] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:22.972] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:28.530] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:28.645] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:34.137] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:34.265] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:39.679] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:39.794] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:45.298] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:45.404] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:50.919] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:51.023] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:08:54.383] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [2463494]
+RecordTimestamp [1686427200] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='data_resource', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [TRUNCATE table c_contract_file]
+]}
+
+[2023-06-12 10:08:56.520] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:08:56.621] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:02.127] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:02.224] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:07.752] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:07.840] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:13.367] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:13.471] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:19.002] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:19.112] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:24.611] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:24.708] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:30.195] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:30.294] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:35.742] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:35.848] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:41.271] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:41.398] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:46.856] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:46.974] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:47.003] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4129640]
+RecordTimestamp [1686513600] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='data_resource', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [TRUNCATE table c_contract_file]
+]}
+
+[2023-06-12 10:09:52.452] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:52.582] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:58.035] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:09:58.161] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:09:59.542] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4508678]
+RecordTimestamp [1686533117] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+MODIFY COLUMN `is_finance_refuse` tinyint(2) NULL DEFAULT 0 COMMENT '是否是来自订单结算的数据，0不是，1是' AFTER `year`]
+]}
+
+[2023-06-12 10:09:59.565] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4510796]
+RecordTimestamp [1686533236] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+ADD COLUMN `invoice_resource` tinyint(2) NULL DEFAULT 0 COMMENT '是否是来自订单结算的数据，0不是，1是' AFTER `is_finance_refuse`]
+]}
+
+[2023-06-12 10:10:00.331] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4531038]
+RecordTimestamp [1686534368] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [UPDATE]
+Schema info [{, 
+recordFields= [{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}, {fieldName='name', rawDataTypeNum=253, isPrimaryKey=false, isUniqueKey=false, fieldPosition=1}], 
+databaseName='new_zjtx_biz_db', 
+tableName='icetea_dts_test', 
+primaryIndexInfo [[indexType=PrimaryKey, indexFields=[{fieldName='id', rawDataTypeNum=3, isPrimaryKey=true, isUniqueKey=false, fieldPosition=0}], cardinality=0, nullable=true, isFirstUniqueIndex=false, name=null]], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {[Field [id] [5]
+Field [name] [iceatae]
+]}
+After image {[Field [id] [5]
+Field [name] [iceatae1234123]
+]}
+
+[2023-06-12 10:10:00.776] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.DefaultRecordPrintListener:49] - 
+RecordID [4546801]
+RecordTimestamp [1686535254] 
+Source [{"sourceType": "MySQL", "version": "5.7.40-log"}]
+RecordType [DDL]
+Schema info [{, 
+recordFields= [{fieldName='ddl', rawDataTypeNum=0, isPrimaryKey=false, isUniqueKey=false, fieldPosition=0}], 
+databaseName='zzh_test_num_backup', 
+tableName='null', 
+primaryIndexInfo [null], 
+uniqueIndexInfo [[]], 
+partitionFields = null}]
+Before image {null}
+After image {[Field [ddl] [ALTER TABLE `zzh_test_num_backup`.`zj_supple_invoice` 
+DROP COLUMN `is_finance_refuse`]
+]}
+
+[2023-06-12 10:10:03.574] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:03.696] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:09.214] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:09.345] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:14.876] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:15.009] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:20.520] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:20.661] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:26.175] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:26.303] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:31.849] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:31.963] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:37.486] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:37.585] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:43.134] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:43.228] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:48.801] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:48.905] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:10:54.501] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:10:54.588] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:00.144] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:00.225] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:05.844] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:05.908] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:11.483] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:11.562] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:17.171] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:17.262] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:22.911] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:22.983] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:28.615] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:28.686] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:34.289] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:34.326] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:39.933] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:39.960] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:45.649] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:45.655] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:51.331] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:51.333] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:11:56.998] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:11:57.007] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:02.638] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:02.652] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:08.322] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:08.323] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:14.013] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:14.022] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:19.715] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:19.726] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:25.372] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:25.390] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:31.038] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:31.039] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:36.756] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:36.763] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:38.621] [INFO ] [com.aliyun.dts.subscribe.clients.recordfetcher.KafkaRecordFetcher] [com.aliyun.dts.subscribe.clients.recordfetcher.ClusterSwitchListener:44] - Cluster not changed on update:n7i_YLGJRuenq8AvxMsd3Q
+[2023-06-12 10:12:42.451] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:42.469] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:48.083] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:48.094] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:53.698] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:12:53.698] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:59.361] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:12:59.373] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:04.978] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:04.990] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:10.656] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:10.667] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:16.338] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:16.343] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:22.007] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:22.023] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:27.707] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:27.707] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:33.344] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:33.367] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:38.934] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:38.963] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:44.565] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:44.593] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:50.179] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:50.218] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:13:55.852] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:13:55.878] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:01.495] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:01.527] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:07.131] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:07.181] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:12.783] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:12.829] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:18.466] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:18.512] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:24.143] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:24.196] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:29.803] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:29.850] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:35.498] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:35.549] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:41.228] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:41.269] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:46.928] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:46.934] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:52.620] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:52.630] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s
+[2023-06-12 10:14:58.253] [INFO ] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator] [com.aliyun.dts.subscribe.clients.recordgenerator.UserRecordGenerator:86] - UserRecordGenerator: haven't receive records from generator for  5s
+[2023-06-12 10:14:58.296] [INFO ] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor] [com.aliyun.dts.subscribe.clients.recordprocessor.EtlRecordProcessor:51] - EtlRecordProcessor: haven't receive records from generator for  5s

@@ -39,6 +39,7 @@
         <module>oauth2-test/resource-server</module>
         <module>springCloud/nacos-config-demo</module>
         <module>springCloud/test-sentinel</module>
+        <module>test-icetea</module>
     </modules>
 
     <properties>
