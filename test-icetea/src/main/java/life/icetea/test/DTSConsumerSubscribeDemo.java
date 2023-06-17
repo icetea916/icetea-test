@@ -48,7 +48,8 @@ public class DTSConsumerSubscribeDemo {
 
                 if (operationType.equals(OperationType.INSERT)
                         || operationType.equals(OperationType.UPDATE)
-                        || operationType.equals(OperationType.DELETE)) {
+                        || operationType.equals(OperationType.DELETE)
+                        || operationType.equals(OperationType.DDL)) {
 
                     // consume record
                     RecordListener recordPrintListener = new DefaultRecordPrintListener(DbType.MySQL);
@@ -74,11 +75,11 @@ public class DTSConsumerSubscribeDemo {
         // topic to consume, partition is 0
         String topic = "cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2";
         // user password and sid for auth
-        String sid = "dtss49o6u7712y2324";
+        String sid = "dtsmz4v61ju14hn2ej";
         String userName = "iceteatest";
         String password = "iceteatest1234";
         // initial checkpoint for first seek(a timestamp to set, eg 1566180200 if you want (Mon Aug 19 10:03:21 CST 2019))
-        String initCheckpoint = "1686289518";
+        String initCheckpoint = "1686706955";
         // when use subscribe mode, group config is required. kafka consumer group is enabled
         ConsumerContext.ConsumerSubscribeMode subscribeMode = ConsumerContext.ConsumerSubscribeMode.SUBSCRIBE;
 

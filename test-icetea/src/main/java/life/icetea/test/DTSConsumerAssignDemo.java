@@ -79,7 +79,7 @@ public class DTSConsumerAssignDemo {
         // topic to consume, partition is 0
         String topic = "cn_beijing_vpc_rm_2zes7940d756zabhz_new_zjtx_test_admin_upgrade_from_old_version2";
         // user password and sid for auth
-        String sid = "dtsck0i6t5a123f7iy";
+        String sid = "dtszc6u60qk12a75hf";
         String userName = "iceteatest";
         String password = "iceteatest1234";
         // initial checkpoint for first seek(a timestamp to set, eg 1566180200 if you want (Mon Aug 19 10:03:21 CST 2019))
