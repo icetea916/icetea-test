@@ -40,6 +40,7 @@
         <module>springCloud/nacos-config-demo</module>
         <module>springCloud/test-sentinel</module>
         <module>test-icetea</module>
+        <module>test-kafka</module>
     </modules>
 
     <properties>
