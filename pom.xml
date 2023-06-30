@@ -41,6 +41,7 @@
         <module>springCloud/test-sentinel</module>
         <module>test-icetea</module>
         <module>test-kafka</module>
+        <module>test-itext</module>
     </modules>
 
     <properties>
