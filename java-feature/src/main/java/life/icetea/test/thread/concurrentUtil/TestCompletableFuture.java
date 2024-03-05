@@ -51,21 +51,22 @@ public class TestCompletableFuture {
     @Test
     public void test2() throws ExecutionException, InterruptedException {
         CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
+            log.info("执行开始");
             if (new Random().nextInt(10) % 2 == 0) {
                 int i = 12 / 0;
             }
-            System.out.println("执行结束");
+            log.info("执行结束");
             return "icetea";
         });
 
         // 任务完成或出现异常执行方法，若为异常则记过为null
         completableFuture.whenComplete((v, e) -> {
-            System.out.println(v);
+            log.info("whenComplete, value={}", v);
         });
 
-        // 出现异常是先执行改方法
-        completableFuture.exceptionally(t -> {
-            System.out.println("执行失败，" + t.getMessage());
+        // 出现异常是先执行该方法
+        completableFuture.exceptionally(e -> {
+            log.error("执行失败", e);
             return "icetea异常";
         });
 
