@@ -1,4 +1,8 @@
-import org.apache.rocketmq.client.apis.*;
+package comsumer;
+
+import org.apache.rocketmq.client.apis.ClientConfiguration;
+import org.apache.rocketmq.client.apis.ClientException;
+import org.apache.rocketmq.client.apis.ClientServiceProvider;
 import org.apache.rocketmq.client.apis.consumer.ConsumeResult;
 import org.apache.rocketmq.client.apis.consumer.FilterExpression;
 import org.apache.rocketmq.client.apis.consumer.FilterExpressionType;
@@ -7,53 +11,47 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * push消费者
+ * https://rocketmq.apache.org/zh/docs/featureBehavior/06consumertype/#pushconsumer
+ */
 public class PushConsumerExample {
     private static final Logger logger = LoggerFactory.getLogger(PushConsumerExample.class);
 
+    /**
+     * 推模式消费消息
+     */
     public static void main(String[] args) throws ClientException, IOException, InterruptedException {
         final ClientServiceProvider provider = ClientServiceProvider.loadService();
         // 接入点地址，需要设置成Proxy的地址和端口列表，一般是xxx:8081;xxx:8081。
-        String endpoints = "39.105.212.214:8081";
-        String accessKey = "zjtx_admin";
-        String secretKey = "a5$GJg6@a_zjtx_admin";
-        SessionCredentialsProvider sessionCredentialsProvider =
-                new StaticSessionCredentialsProvider(accessKey, secretKey);
-
+        String endpoints = "127.0.0.1:8081";
         ClientConfiguration clientConfiguration = ClientConfiguration.newBuilder()
-                .setCredentialProvider(sessionCredentialsProvider)
                 .setEndpoints(endpoints)
                 .build();
         // 订阅消息的过滤规则，表示订阅所有Tag的消息。
-        String tag = "*";
-        FilterExpression filterExpression = new FilterExpression(tag, FilterExpressionType.TAG);
-        // 为消费者指定所属的消费者分组，Group需要提前创建。
-        String consumerGroup = "test_consumer_group";
+        FilterExpression filterExpression = new FilterExpression("*", FilterExpressionType.TAG);
         // 指定需要订阅哪个目标Topic，Topic需要提前创建。
         String topic = "test_topic";
-        String delay_topic = "test_delay_topic";
         Map<String, FilterExpression> map = new HashMap<>();
         map.put(topic, filterExpression);
-        map.put(delay_topic, filterExpression);
 
         // 初始化PushConsumer，需要绑定消费者分组ConsumerGroup、通信参数以及订阅关系。
         PushConsumer pushConsumer = provider.newPushConsumerBuilder()
                 .setClientConfiguration(clientConfiguration)
-                // 设置消费者分组。
-                .setConsumerGroup(consumerGroup)
-                // 设置预绑定的订阅关系。
+                // 设置消费者分组
+                .setConsumerGroup("test_consumer_group")
+                // 设置预绑定的订阅关系。key=topic, value=FilterExpression。
                 .setSubscriptionExpressions(map)
                 .setConsumptionThreadCount(1)
-                .setMaxCacheMessageCount(1)
-                // 设置消费监听器。
+                .setMaxCacheMessageCount(1000)
+                // 设置消费监听器
                 .setMessageListener(messageView -> {
                     // 处理消息并返回消费结果。
-                    Charset charset = StandardCharsets.UTF_8;
-                    String mb = charset.decode(messageView.getBody()).toString();
+                    String mb = StandardCharsets.UTF_8.decode(messageView.getBody()).toString();
                     logger.info("Consume message successfully, messageId={}, mb={}", messageView.getMessageId(), mb);
                     return ConsumeResult.SUCCESS;
                 }).build();
