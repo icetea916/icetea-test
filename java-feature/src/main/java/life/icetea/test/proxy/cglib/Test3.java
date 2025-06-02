@@ -20,9 +20,9 @@ public class Test3 {
         // 创建代理对象
         Leader proxy = (Leader) enhancer.create();
         proxy.meeting();
+        proxy.evaluate("xiaoming");
         proxy.evaluate("icetea");
 
-        proxy.test1();
     }
 
 }
