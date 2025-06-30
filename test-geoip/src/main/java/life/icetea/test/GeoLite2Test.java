@@ -19,7 +19,7 @@ public class GeoLite2Test {
         GeoLite2Utils geoLite2Utils = new GeoLite2Utils(reader);
 
         // 访问IP
-        String ip = "14.5.6.2";
+        String ip = "8.8.8.8";
         String site = "国家：" + geoLite2Utils.getCountry(ip)
                 + "\n省份：" + geoLite2Utils.getProvince(ip)
                 + "\n城市：" + geoLite2Utils.getCity(ip) + "\n经度："
