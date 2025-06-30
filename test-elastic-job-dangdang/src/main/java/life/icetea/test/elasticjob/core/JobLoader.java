@@ -1,6 +1,5 @@
 package life.icetea.test.elasticjob.core;
 
-import com.dangdang.ddframe.job.api.ElasticJob;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
 import com.dangdang.ddframe.job.config.JobCoreConfiguration;
 import com.dangdang.ddframe.job.config.JobTypeConfiguration;
@@ -36,13 +35,13 @@ public class JobLoader implements CommandLineRunner, ApplicationContextAware, Em
 
     @Override
     public void run(String... strings) throws Exception {
-        log.info("加载job开始......");
-        Map<String, Object> beansWithAnnotation = applicationContext.getBeansWithAnnotation(Job.class);
+        Map<String, Object> beansWithAnnotation = applicationContext.getBeansWithAnnotation(ElasticJob.class);
         for (Map.Entry e : beansWithAnnotation.entrySet()) {
             // 创建job core 属性
-            Job annotation = e.getValue().getClass().getAnnotation(Job.class);
+            ElasticJob annotation = e.getValue().getClass().getAnnotation(ElasticJob.class);
             String cron = resolver.resolveStringValue(annotation.cron());
             String name = resolver.resolveStringValue(annotation.name());
+            log.info("{} job is loading......", name);
             String description = resolver.resolveStringValue(annotation.description());
             String shardingItemParameters = resolver.resolveStringValue(annotation.shardingItemParameters());
             JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration
@@ -54,30 +53,29 @@ public class JobLoader implements CommandLineRunner, ApplicationContextAware, Em
                     .build();
 
             // 创建job实例
-            initJob((ElasticJob) e.getValue(), jobCoreConfiguration);
+            initJob((com.dangdang.ddframe.job.api.ElasticJob) e.getValue(), jobCoreConfiguration);
         }
-        log.info("加载job结束");
     }
 
     /**
      * 初始化job
      */
-    private void initJob(ElasticJob job, JobCoreConfiguration jobCoreConfiguration) {
+    private void initJob(com.dangdang.ddframe.job.api.ElasticJob elasticJob, JobCoreConfiguration jobCoreConfiguration) {
         JobTypeConfiguration jobTypeConfiguration = null;
-        if (job instanceof SimpleJob) {
+        if (elasticJob instanceof SimpleJob) {
             // 简单类型job
-            jobTypeConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, job.getClass().getCanonicalName());
+            jobTypeConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, elasticJob.getClass().getCanonicalName());
             jobCoreConfiguration.getJobProperties();
         } else {
             // 数据流类型job
-            jobTypeConfiguration = new DataflowJobConfiguration(jobCoreConfiguration, job.getClass().getCanonicalName(), true);
+            jobTypeConfiguration = new DataflowJobConfiguration(jobCoreConfiguration, elasticJob.getClass().getCanonicalName(), true);
         }
 
         LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(jobTypeConfiguration)
                 .overwrite(true)
                 .build();
 
-        new SpringJobScheduler(job, regCenter, liteJobConfiguration, new MyElasticJobListener())
+        new SpringJobScheduler(elasticJob, regCenter, liteJobConfiguration, new MyElasticJobListener())
                 .init();
 
         log.info("\n加载定时任务完成......\n"

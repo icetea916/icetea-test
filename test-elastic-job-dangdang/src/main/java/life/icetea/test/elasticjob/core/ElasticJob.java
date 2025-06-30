@@ -11,8 +11,9 @@ import java.lang.annotation.*;
 @Target(value = ElementType.TYPE)
 @Retention(value = RetentionPolicy.RUNTIME)
 @Documented
+@Inherited
 @Component
-public @interface Job {
+public @interface ElasticJob {
 
     /**
      * 任务名称
