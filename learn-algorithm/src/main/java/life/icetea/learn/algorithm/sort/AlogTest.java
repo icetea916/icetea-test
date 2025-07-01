@@ -1,36 +1,36 @@
 package life.icetea.learn.algorithm.sort;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 public class AlogTest {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(twoSum2(new int[]{2, 7, 11, 15}, 9)));
-    }
+        ListNode listNode = new ListNode(1);
+        listNode.next = new ListNode(2);
 
-
-    public static int[] twoSum2(int[] nums, int target) {
-        Map<Integer, Integer> hashtable = new HashMap();
-        for (int i = 0; i < nums.length; i++) {
-            if (hashtable.containsKey(target - nums[i])) {
-                return new int[]{hashtable.get(target- nums[i]), i};
-            }
-            hashtable.put(nums[i], i);
+        ListNode reverseList = reverseList(listNode);
+        ListNode next = reverseList;
+        while (next.next != null) {
+            System.out.println(reverseList.val);
+            next = next.next;
         }
-        return null;
+        System.out.println(next.val);
     }
 
-    public static int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
-                }
-            }
+    public static ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
         }
-        return null;
+        ListNode nextHead = head.next;
+        head.next = null;
+        ListNode reverseListHead = reverseList(nextHead);
+
+        ListNode next = reverseListHead;
+        while (next.next != null) {
+            next = next.next;
+        }
+
+        next.next = head;
+        return reverseListHead;
     }
+
 
 }
