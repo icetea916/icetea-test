@@ -10,12 +10,12 @@ public class Singleton3 {
     private Singleton3() {
     }
 
-    public static class LazyHolder {
+    private static class LazyHolder {
         private static final Singleton3 singleton3 = new Singleton3();
     }
 
 
-    private static Singleton3 getInstance() {
+    public static Singleton3 getInstance() {
         return LazyHolder.singleton3;
     }
 
