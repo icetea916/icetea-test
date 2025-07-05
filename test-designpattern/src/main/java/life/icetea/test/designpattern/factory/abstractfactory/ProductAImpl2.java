@@ -1,4 +1,4 @@
-package life.icetea.test.designpattern.abstractfactory;
+package life.icetea.test.designpattern.factory.abstractfactory;
 
 public class ProductAImpl2 implements ProductA {
     @Override

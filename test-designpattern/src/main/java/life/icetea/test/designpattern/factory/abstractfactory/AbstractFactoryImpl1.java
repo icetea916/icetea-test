@@ -1,4 +1,4 @@
-package life.icetea.test.designpattern.abstractfactory;
+package life.icetea.test.designpattern.factory.abstractfactory;
 
 public class AbstractFactoryImpl1 implements AbstractFactory {
     @Override
