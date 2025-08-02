@@ -3,6 +3,7 @@ package life.icetea.test.springboot.async;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
@@ -32,6 +33,11 @@ public class TestAsyncApplication {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    @Bean(initMethod = "initMethod")
+    public ExampleBean ExampleBean() {
+        return new ExampleBean();
     }
 
 
