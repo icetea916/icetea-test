@@ -41,7 +41,7 @@
         <module>springCloud/test-sentinel</module>
         <module>test-icetea</module>
         <module>test-kafka</module>
-        <module>test-rocketmq</module>
+        <module>test-spring-event</module>
     </modules>
 
     <properties>

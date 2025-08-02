@@ -12,26 +12,30 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MyElasticJobListener implements ElasticJobListener {
 
-    private long beginTime = 0;
+    private final ThreadLocal<Long> beginTimeThreadLocal = new ThreadLocal<>();
 
     /**
-     * 任务开始是调用
+     * 任务开始时调用
      */
     @Override
     public void beforeJobExecuted(ShardingContexts shardingContexts) {
-        beginTime = System.currentTimeMillis();
-        log.info("===>{} 任务执行开始 timestamp={} <===", shardingContexts.getJobName(), beginTime);
+        long beginTime = System.currentTimeMillis();
+        beginTimeThreadLocal.set(beginTime);
+        log.info("任务开始: jobName={} beginTime={} ", shardingContexts.getJobName(), beginTime);
     }
 
     /**
-     * 当前服务器上的所有任务分片执行完毕后调用
+     * 任务结束调用
+     * 注意： 当前服务器上的所有任务分片执行完毕后调用
      *
      * @param shardingContexts
      */
     @Override
     public void afterJobExecuted(ShardingContexts shardingContexts) {
         long endTime = System.currentTimeMillis();
-        log.info("{} 任务执行结束 timestamp={}, 总耗时={}秒 <===", shardingContexts.getJobName(), endTime, (endTime - beginTime) / 1000);
+        Long beginTime = beginTimeThreadLocal.get();
+        log.info("任务结束：jobName={} 总耗时={}秒, endtime={}ms, beginTime={}ms", shardingContexts.getJobName(), (endTime - beginTime) / 1000, beginTime, endTime);
+        beginTimeThreadLocal.remove();
     }
 
 }

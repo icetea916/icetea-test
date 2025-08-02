@@ -2,8 +2,9 @@ package life.icetea.test.elasticjob.job;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
-import life.icetea.test.elasticjob.core.Job;
+import life.icetea.test.elasticjob.core.ElasticJob;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author icetea
  */
-@Job(
+@ElasticJob(
         cron = "0/10 * * * * ?",
         name = "simpleJobDemo",
         shardingTotalCount = 4,
@@ -22,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class SimpleJobDemo implements SimpleJob {
 
     @Override
+    @Transactional
     public void execute(ShardingContext shardingContext) {
         log.info("任务开始：任务名称={}, 当前任务参数={}, 任务总片数={}, 当前分片项={}, 当前分片参数={}, ",
                 shardingContext.getJobName(),

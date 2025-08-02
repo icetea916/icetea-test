@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ElasticRegCenterConfig {
 
-    private final String serverList = "localhost:2181";
+    private final String serverList = "192.168.136.129:2181";
 
-    private final String namespace = "icetea-job";
+    private final String namespace = "test-job";
 
     /**
      * 连接Zookeeper的权限令牌.

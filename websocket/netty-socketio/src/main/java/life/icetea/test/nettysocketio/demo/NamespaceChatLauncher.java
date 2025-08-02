@@ -2,6 +2,7 @@ package life.icetea.test.nettysocketio.demo;
 
 import com.corundumstudio.socketio.*;
 import com.corundumstudio.socketio.listener.DataListener;
+import life.icetea.test.nettysocketio.domain.ChatObject;
 
 public class NamespaceChatLauncher {
 
