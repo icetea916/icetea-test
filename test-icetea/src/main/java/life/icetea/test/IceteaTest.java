@@ -16,8 +16,6 @@ public class IceteaTest {
             executorService.submit(IceteaTest::run);
         }
 
-        executorService4.
-
         ThreadPoolExecutor executor = new ThreadPoolExecutor(10, 30, 30, TimeUnit.MINUTES, new LinkedBlockingDeque<>(), new ThreadPoolExecutor.AbortPolicy());
     }
 
